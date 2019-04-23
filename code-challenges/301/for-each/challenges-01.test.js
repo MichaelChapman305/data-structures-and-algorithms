@@ -91,7 +91,7 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  arr.forEach(element => {
+  arr.forEach((element) => {
     if (element%3 === 2) {
       arr.pop();
     }
@@ -145,15 +145,7 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   let finalArr = [];
   arr.forEach(element => {
-    if (element % 15 === 0) {
-      finalArr.push('Fizz Buzz');
-    } else if (element % 5 === 0) {
-      finalArr.push('Buzz');
-    } else if (element % 3 === 0) {
-      finalArr.push('Fizz');
-    } else {
-      finalArr.push(element);
-    }
+    element%15 ? finalArr.push('Fizz Buzz') : element % 5 ? finallArr.push('Buzz') : element % 3 ? finalArr.push('Fizz') : finalArr.push(element);
   });
 
   return finalArr;
