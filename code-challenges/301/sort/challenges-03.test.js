@@ -116,7 +116,20 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    let aLen = a.toString().length;
+    let bLen = b.toString().length;
+    
+    if (aLen > bLen) {
+      return 1;
+    } else if (aLen < bLen) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
