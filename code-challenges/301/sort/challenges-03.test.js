@@ -24,19 +24,7 @@ In this alphabetization, capital letters come before lower case letters.
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetize = (arr) => {
-  arr.sort((a, b) => {
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
-
-  return arr;
-};
+const alphabetize = (arr) => arr.sort();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -119,7 +107,7 @@ const sortNumbersByLength = (arr) => {
   arr.sort((a, b) => {
     let aLen = a.toString().length;
     let bLen = b.toString().length;
-    
+
     if (aLen > bLen) {
       return 1;
     } else if (aLen < bLen) {
@@ -151,7 +139,11 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    return a.lastName > b.lastName;
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
