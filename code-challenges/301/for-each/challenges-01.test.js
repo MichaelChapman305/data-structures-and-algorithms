@@ -145,7 +145,15 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   let finalArr = [];
   arr.forEach(element => {
-    element%15 ? finalArr.push('Fizz Buzz') : element % 5 ? finallArr.push('Buzz') : element % 3 ? finalArr.push('Fizz') : finalArr.push(element);
+    if (element % 15 === 0) {
+      finalArr.push('Fizz Buzz');
+    } else if (element % 5 === 0) {
+      finalArr.push('Buzz');
+    } else if (element % 3 === 0) {
+      finalArr.push('Fizz')
+    } else {
+      finalArr.push(element);
+    }
   });
 
   return finalArr;
