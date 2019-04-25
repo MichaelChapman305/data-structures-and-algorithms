@@ -175,7 +175,7 @@ const sortPeopleBetter = (arr) => {
     }
   });
 
-  return arr;
+  return arr;F
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,7 +201,25 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  let daysOrder = {
+    'Monday': 1,
+    'Tuesday': 2,
+    'Wednesday': 3,
+    'Thursday': 4,
+    'Friday': 5
+  };
+
+  arr.sort((a, b) => {
+    if (daysOrder[a.dayOfWeek] > daysOrder[b.dayOfWeek]) {
+      return 1;
+    } else if (daysOrder[a.dayOfWeek] < daysOrder[b.dayOfWeek]) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
