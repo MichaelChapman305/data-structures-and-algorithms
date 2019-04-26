@@ -25,7 +25,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex = /[A-Z][a-z]+/g;
+  let regex = /[A-Z][a-z]*/g;
 
   return str.match(regex);
 };
@@ -37,7 +37,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex = /[A-J][a-z]*/g;
+  let results = [];
+
+  arr.forEach(city => {
+    return regex.test(city) ? results.push(city) : false;
+  });
+
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +60,13 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  // return /(O?ct)(ober)?\W/g.test(input) ? true : false;
+
+  if (/(O?ct)(ober)?\W/g.test(input)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +80,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /(\w+\s)/g;
+
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +98,11 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  let regex = /[aeiou]/g;
+
+  let newStr = str.replace(regex, '_')
+
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
