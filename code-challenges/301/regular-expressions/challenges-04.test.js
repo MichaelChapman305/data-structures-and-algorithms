@@ -60,13 +60,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // return /(O?ct)(ober)?\W/g.test(input) ? true : false;
-
-  if (/(O?ct)(ober)?\W/g.test(input)) {
-    return true;
-  } else {
-    return false;
-  }
+  return /\b([Oo]ct)(\b)?(ober)?(\b)/g.test(input) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
