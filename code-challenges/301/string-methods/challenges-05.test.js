@@ -78,13 +78,14 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  // let result = [];
+  let result = [];
 
-  // recipe.ingredients.forEach(ingredient => {
-  //   result.push(ingredient.slice(ingredient.indexOf(' ', 2)));
-  // });
+  recipe.ingredients.forEach(ingredient => {
+    let slice = ingredient.slice(ingredient.indexOf(' ', 3));
+    result.push(slice.substring(1));
+  });
 
-  // return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
