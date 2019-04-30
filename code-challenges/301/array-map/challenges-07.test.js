@@ -28,7 +28,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   let results = [];
-  
+
   arr.forEach(num => {
     results.push(Math.pow(2, num));
   });
@@ -57,7 +57,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map((char, index) => char.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
