@@ -123,7 +123,17 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let count = 0;
+
+  arr.forEach(char => {
+    if (char.spouse !== null) {
+      count += 1;
+    }
+
+    count += char.children.length + 1;
+  });
+
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
