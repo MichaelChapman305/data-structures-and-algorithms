@@ -9,7 +9,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  return arr.filter(num => (num%2));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  return arr.filter(word => (/[aeiou]/g.test(word)));
 };
 
 
@@ -37,7 +37,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(num => forbiddenValues.indexOf(num) === -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(stat => stat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +92,17 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let results = [];
+
+  arr.filter((stat, index, array) => {
+    if (stat.baseStat > minBaseStat) {
+      results.push(array[index].stat.name);
+    } else {
+      return false;
+    }
+  });
+
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +155,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(char => !(char.children));
 };
 
 /* ------------------------------------------------------------------------------------------------
