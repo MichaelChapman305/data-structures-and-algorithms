@@ -158,7 +158,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => acc + cur) / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
