@@ -9,9 +9,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  return arr.reduce((acc, cur)=> {
-    return acc + 1;
-  });
+  return arr.reduce((acc, cur)=> acc+1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +69,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {
+    acc.push(cur.name);
+    return acc;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +84,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+  return arr.split('').reduce((acc, cur) => {
+    acc.unshift(cur);
+    return acc;
+  }, []).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +140,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {
+    if (cur.children) {
+      acc += cur.children.length;
+    }
+
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +158,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => acc + cur) / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,7 +179,13 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {
+    if (isPrime(cur)) {
+      acc += 1;
+    }
+
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
