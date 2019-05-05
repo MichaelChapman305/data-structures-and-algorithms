@@ -11,7 +11,17 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let results = 0;
+  if (input.length > 0) {
+     input.forEach(arr => {
+      arr.map(num => {
+       if (num === target) {
+         results++;
+       }
+     });
+    });
+  }
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
