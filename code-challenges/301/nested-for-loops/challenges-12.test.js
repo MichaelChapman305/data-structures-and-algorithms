@@ -161,7 +161,6 @@ const averageDailyTemperature = (weather) => {
     let final = weather[i].reduce((acc, cur) => {
       return acc + cur;
     });
-    console.log(count);
     result += final;
   }
 
@@ -186,7 +185,18 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let count = 0;
+  let lowest = 0;
+  for (let i = 0; i < weather.length; i++) {
+    count = weather[i].length;
+    let avg = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+    if (lowest === 0 || lowest > avg / count)
+    lowest = avg / count;
+  }
+
+  return lowest;
 };
 
 /* ------------------------------------------------------------------------------------------------
