@@ -24,7 +24,6 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -254,3 +253,4 @@ describe('Testing challenge 8', () => {
     expect(result[2]).toStrictEqual(27);
   });
 });
+
