@@ -23,7 +23,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  let hourlySales = hoursOpen.map(time => 0);
+
+  hoursOpen.forEach(hour => {
+    stores.forEach(store => {
+      hourlySales[hoursOpen.indexOf(hour)] += store[hoursOpen.indexOf(hour)];
+    });
+  });
+
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +45,18 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let hourlySales = [];
+
+  hours.forEach((item, index) => {
+    const object = {
+      sales: `${data[index]} cookies`,
+      time: item
+    }
+
+    hourlySales.push(object);
+  });
+
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +78,17 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let treats = 0;
+
+  arr.forEach(list => {
+    list.items.forEach(item => {
+      if (item.name === 'Treats') {
+        treats += item.quantity;
+      }
+    });
+  });
+
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +110,7 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  return board[row][col] === '#' ? 'hit' : 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +122,18 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let result = 1;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i].length > 0) {
+      let final = numbers[i].reduce((acc, cur) => {
+        return acc * cur;
+      });
+
+      result *= final;
+    }
+  }
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +153,18 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let result = 0;
+  let count = 0;
+
+  for (let i = 0; i < weather.length; i++) {
+    count += weather[i].length;
+    let final = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+    result += final;
+  }
+
+  return result / count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +185,18 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let count = 0;
+  let lowest = 0;
+  for (let i = 0; i < weather.length; i++) {
+    count = weather[i].length;
+    let avg = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+    if (lowest === 0 || lowest > avg / count)
+    lowest = avg / count;
+  }
+
+  return lowest;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,7 +212,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  let arr = str.split('');
+  let result = [0, 0, 0];
+  let index = 0;
+
+  arr.forEach(item => {
+    if (item === '\n') {
+      index += 1;
+    } else if (item !== ',') {
+      result[index] += Number(item);
+    }
+  });
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
