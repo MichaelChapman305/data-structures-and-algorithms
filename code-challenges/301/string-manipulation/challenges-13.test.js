@@ -86,7 +86,13 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i].includes(target)) {
+      return false;
+    }
+  }
+
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
