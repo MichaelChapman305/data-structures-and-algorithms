@@ -9,7 +9,9 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(item => {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +86,12 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {
+    if (Number(cur.mass) > Number(starWarsData[0].mass)) {
+      acc.push(cur.name);
+    }
+    return acc;
+  }, []).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +109,25 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    if (property === 'name') {
+      if (a.name < b.name) {
+        return -1
+      } else if (a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    } else {
+      if (a.price < b.price) {
+        return -1
+      } else if (a.price > b.price) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +143,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  return url.includes('https://') ?  true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
