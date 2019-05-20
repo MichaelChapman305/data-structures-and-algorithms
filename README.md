@@ -2,7 +2,7 @@
 Data structures and algorithms practice
 
 #GO TO:
-⋅⋅* [Array-filter](./code-challenges/301/array-filter)
+⋅⋅*[Array-filter](./code-challenges/301/array-filter)
 ⋅⋅* [Array-map](./code-challenges/301/array-map)
 ⋅⋅* [Array-methods](./code-challenges/301/array-methods)
 ⋅⋅* [Array-reduce](./code-challenges/301/array-reduce)
