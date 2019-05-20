@@ -8,4 +8,4 @@ I need to write a function that takes and array and returns the reversed array.
 The approach I took is iterating through the array from both start and last indexes, swapping both first and last indexes and then inner indexes appropriately until the array is completely reversed. The reversed array is then returned. 
 
 ## Solution
-![Picture of whiteboarding](./code-challenges/401/assets/array_reverse.jpg)
+![Picture of whiteboarding](../../assets/array_reverse.jpg)
