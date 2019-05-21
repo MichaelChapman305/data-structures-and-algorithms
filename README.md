@@ -17,3 +17,4 @@ Data structures and algorithms practice
 [string-methods](./code-challenges/301/string-methods)
 [value-vs-reference](./code-challenges/301/value-vs-reference)
 [array_reverse](./code-challenges/401/array_reverse)
+[array_shift](./code-challenges/401/array_shift)

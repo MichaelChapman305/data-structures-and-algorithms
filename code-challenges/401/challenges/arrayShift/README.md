@@ -1,11 +1,11 @@
-# Reverse an Array
-Write a function that takes an array, reverses said array, and returns the reversed array
+# Array shift
+Write a function that takes an array and a value and inserts the value into the middle of the array.
 
 ## Challenge
-I need to write a function that takes and array and returns the reversed array.
+I need to write a function that takes and array and a value and returns the array with the value in the middle
 
 ## Approach & Efficiency
-The approach I took is iterating through the array from both start and last indexes, swapping both first and last indexes and then inner indexes appropriately until the array is completely reversed. The reversed array is then returned. 
+I took the approach of creating a results array with the old array and the new value in the middle. I took this approach because it works well.
 
 ## Solution
-![Picture of whiteboarding](../../assets/array_reverse.jpg)
+![Picture of whiteboarding](../../assets/array_shift.jpg)
