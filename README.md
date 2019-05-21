@@ -30,5 +30,6 @@ Data structures and algorithms practice
 
 [value-vs-reference](./code-challenges/301/value-vs-reference)
 
-[array_reverse](./code-challenges/401/challenges/array_reverse)
-[array_shift](./code-challenges/401/challenges/array_shift)
+[array_reverse](./code-challenges/401/challenges/arrayReverse)
+
+[array_shift](./code-challenges/401/challenges/arrayShift)
