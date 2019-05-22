@@ -1,11 +1,11 @@
-# Reverse an Array
-Write a function that takes an array, reverses said array, and returns the reversed array
+# Binary search
+Write a function that takes an array and a value, and returns the index of the value in the array, or -1 if not found.
 
 ## Challenge
-I need to write a function that takes and array and returns the reversed array.
+I need to write a function that takes an array and a number and finds the index of said number inside of said array
 
 ## Approach & Efficiency
-The approach I took is iterating through the array from both start and last indexes, swapping both first and last indexes and then inner indexes appropriately until the array is completely reversed. The reversed array is then returned. 
+I used start, end and mid variables to control which group of values in the array I am working with and a mid value to check against the argument value. This allows me to efficiently find mid using a while loop which checks if the value is larger or smaller than the mid.
 
 ## Solution
-![Picture of whiteboarding](../../assets/array_reverse.jpg)
+![Picture of whiteboarding](../../assets/array_binary_search.JPG)
