@@ -2,6 +2,7 @@
 Data structures and algorithms practice
 
 #GO TO:
+
 [Array-filter](./code-challenges/301/array-filter)
 
 [Array-map](./code-challenges/301/array-map)
@@ -33,3 +34,5 @@ Data structures and algorithms practice
 [array_reverse](./code-challenges/401/challenges/arrayReverse)
 
 [array_shift](./code-challenges/401/challenges/arrayShift)
+
+[array_shift](./code-challenges/401/challenges/arrayBinarySearch)
