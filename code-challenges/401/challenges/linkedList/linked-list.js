@@ -19,4 +19,17 @@ class LinkedList {
     this.head = node;
     return this.head.val;
   }
+
+  includes(val) {
+    let current = this.head;
+
+    while (current) {
+      if (current.val === val) {
+        return true;
+      } else {
+        current = current.next;
+      }
+    }
+    return false;
+  }
 };
