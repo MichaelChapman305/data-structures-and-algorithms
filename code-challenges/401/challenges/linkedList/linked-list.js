@@ -32,4 +32,13 @@ class LinkedList {
     }
     return false;
   }
+
+  print() {
+    let current = this.head;
+
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
 };
