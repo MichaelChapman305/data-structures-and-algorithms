@@ -19,26 +19,4 @@ class LinkedList {
     this.head = node;
     return this.head.val;
   }
-
-  includes(val) {
-    let current = this.head;
-
-    while (current) {
-      if (current.val === val) {
-        return true;
-      } else {
-        current = current.next;
-      }
-    }
-    return false;
-  }
-
-  print() {
-    let current = this.head;
-
-    while (current) {
-      console.log(current.val);
-      current = current.next;
-    }
-  }
 };
