@@ -30,7 +30,6 @@ const grandTotal = (stores) => {
       hourlySales[hoursOpen.indexOf(hour)] += store[hoursOpen.indexOf(hour)];
     });
   });
-
   return hourlySales;
 };
 
