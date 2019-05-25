@@ -35,10 +35,15 @@ class LinkedList {
 
   print() {
     let current = this.head;
-
+    let list = [];
     while (current) {
       console.log(current.val);
+      list.push(current.val);
       current = current.next;
     }
+
+    return list;
   }
 };
+
+module.exports = LinkedList;
