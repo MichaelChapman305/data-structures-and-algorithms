@@ -8,4 +8,4 @@ I need to write a function that takes and array and a value and returns the arra
 I took the approach of creating a results array with the old array and the new value in the middle. I took this approach because it works well.
 
 ## Solution
-![Picture of whiteboarding](../../assets/array_shift.jpg)
+![Picture of whiteboarding](../../assets/array_shift.JPG)
