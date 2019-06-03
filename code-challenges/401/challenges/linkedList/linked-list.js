@@ -70,6 +70,21 @@ class LinkedList {
     return 'Node could not be found';
   }
 
+  append(val) {
+    let node = new Node();
+    node.val = val;
+    let current = this.head;
+
+    while(current) {
+      if (!current.next) {
+        current.next = node;
+        return val;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
   print() {
     let current = this.head;
     let list = [];
