@@ -25,3 +25,8 @@ Appends a node before the specified node
 
 ###appendAfter
 Append a node after the specified node
+
+## Solution
+![Picture of whiteboarding](../../assets/linked_list1.JPG)
+![Picture of whiteboarding](../../assets/linked_list2.JPG)
+![Picture of whiteboarding](../../assets/linked_list3.JPG)
