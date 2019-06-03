@@ -33,16 +33,76 @@ class LinkedList {
     return false;
   }
 
-  print() {
+  insertBefore(value, newValue) {
+    let newNode = new Node();
+    newNode.val = newValue;
     let current = this.head;
-    let list = [];
-    while (current) {
-      console.log(current.val);
-      list.push(current.val);
-      current = current.next;
+    
+    if (current.val === value) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return newValue;
+    } else {
+      while(current) {
+        if (current.next.val === value) {
+          newNode.next = current.next;
+          current.next = newNode;
+          return newValue;
+        } else {
+          current = current.next;
+        }
+      }
     }
 
-    return list;
+    return 'Node could not be found';
+  }
+
+  insertAfter(value, newValue) {
+    let newNode = new Node();
+    newNode.val = newValue;
+    let current = this.head;
+
+    while(current) {
+      if (current.val === value) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return newValue;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return 'Node could not be found';
+  }
+
+  append(val) {
+    let node = new Node();
+    node.val = val;
+
+    if (!this.head) {
+      this.head = node;
+      return val;
+    } 
+
+    let current = this.head;
+
+    while(current) {
+      if (!current.next) {
+        current.next = node;
+        return val;
+      } else {
+        current = current.next;
+      }
+    }
+    return val;
+  }
+
+  print() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
   }
 };
 

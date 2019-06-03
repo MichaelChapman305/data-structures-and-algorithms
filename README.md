@@ -35,4 +35,6 @@ Data structures and algorithms practice
 
 [array_shift](./code-challenges/401/challenges/arrayShift)
 
-[array_shift](./code-challenges/401/challenges/arrayBinarySearch)
+[array_binary_search](./code-challenges/401/challenges/arrayBinarySearch)
+
+[linked_list](./code-challenges/401/challenges/linkedList)

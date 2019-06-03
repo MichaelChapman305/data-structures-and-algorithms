@@ -14,5 +14,14 @@ Takes a value and nserts it into the beginning of the array and resets the head 
 ###Includes
 Takes a value and iterates over the linked list and returns true if value is found and false if not
 
-####Print
+###Print
 console logs each value in the linked list and returns an array of all the values in the linked list
+
+###append
+Appends a value to the end of the link list
+
+###appendBefore
+Appends a node before the specified node
+
+###appendAfter
+Append a node after the specified node
