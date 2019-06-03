@@ -33,6 +33,24 @@ class LinkedList {
     return false;
   }
 
+  insertBefore(node, val) {
+    let newNode = new Node();
+    newNode.val = val;
+    let current = this.head;
+
+    while(current) {
+      if (current.next.val === node) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return val;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return 'Node could not be found';
+  }
+
   print() {
     let current = this.head;
     let list = [];
