@@ -37,14 +37,20 @@ class LinkedList {
     let newNode = new Node();
     newNode.val = newValue;
     let current = this.head;
-
-    while(current) {
-      if (current.next.val === value) {
-        newNode.next = current.next;
-        current.next = newNode;
-        return newValue;
-      } else {
-        current = current.next;
+    
+    if (current.val === value) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return newValue;
+    } else {
+      while(current) {
+        if (current.next.val === value) {
+          newNode.next = current.next;
+          current.next = newNode;
+          return newValue;
+        } else {
+          current = current.next;
+        }
       }
     }
 
@@ -72,6 +78,12 @@ class LinkedList {
   append(val) {
     let node = new Node();
     node.val = val;
+
+    if (!this.head) {
+      this.head = node;
+      return val;
+    } 
+
     let current = this.head;
 
     while(current) {
@@ -82,18 +94,15 @@ class LinkedList {
         current = current.next;
       }
     }
+    return val;
   }
 
   print() {
     let current = this.head;
-    let list = [];
     while (current) {
       console.log(current.val);
-      list.push(current.val);
       current = current.next;
     }
-
-    return list;
   }
 };
 
