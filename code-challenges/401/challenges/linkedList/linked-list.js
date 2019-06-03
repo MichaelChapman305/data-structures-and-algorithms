@@ -51,6 +51,25 @@ class LinkedList {
     return 'Node could not be found';
   }
 
+  insertAfter(node, val) {
+    let newNode = new Node();
+    newNode.val = val;
+    let current = this.head;
+
+    while(current) {
+
+      if (current.val === node) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return val;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return 'Node could not be found';
+  }
+
   print() {
     let current = this.head;
     let list = [];
