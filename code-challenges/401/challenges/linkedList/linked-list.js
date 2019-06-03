@@ -33,16 +33,16 @@ class LinkedList {
     return false;
   }
 
-  insertBefore(node, val) {
+  insertBefore(value, newValue) {
     let newNode = new Node();
-    newNode.val = val;
+    newNode.val = newValue;
     let current = this.head;
 
     while(current) {
-      if (current.next.val === node) {
+      if (current.next.val === value) {
         newNode.next = current.next;
         current.next = newNode;
-        return val;
+        return newValue;
       } else {
         current = current.next;
       }
@@ -51,17 +51,16 @@ class LinkedList {
     return 'Node could not be found';
   }
 
-  insertAfter(node, val) {
+  insertAfter(value, newValue) {
     let newNode = new Node();
-    newNode.val = val;
+    newNode.val = newValue;
     let current = this.head;
 
     while(current) {
-
-      if (current.val === node) {
+      if (current.val === value) {
         newNode.next = current.next;
         current.next = newNode;
-        return val;
+        return newValue;
       } else {
         current = current.next;
       }
