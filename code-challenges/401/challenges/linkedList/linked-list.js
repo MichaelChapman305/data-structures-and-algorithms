@@ -10,6 +10,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
 
   insert(val) {
@@ -17,6 +18,7 @@ class LinkedList {
     node.val = val;
     node.next = this.head;
     this.head = node;
+    length++;
     return this.head.val;
   }
 
@@ -41,12 +43,14 @@ class LinkedList {
     if (current.val === value) {
       newNode.next = this.head;
       this.head = newNode;
+      length++;
       return newValue;
     } else {
       while(current) {
         if (current.next.val === value) {
           newNode.next = current.next;
           current.next = newNode;
+          length++;
           return newValue;
         } else {
           current = current.next;
@@ -66,6 +70,7 @@ class LinkedList {
       if (current.val === value) {
         newNode.next = current.next;
         current.next = newNode;
+        length++;
         return newValue;
       } else {
         current = current.next;
@@ -81,6 +86,7 @@ class LinkedList {
 
     if (!this.head) {
       this.head = node;
+      length++;
       return val;
     } 
 
@@ -89,6 +95,7 @@ class LinkedList {
     while(current) {
       if (!current.next) {
         current.next = node;
+        length++;
         return val;
       } else {
         current = current.next;
