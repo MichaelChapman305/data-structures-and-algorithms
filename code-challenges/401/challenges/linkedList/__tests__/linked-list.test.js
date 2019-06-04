@@ -109,4 +109,75 @@ describe('linked-list module', () => {
       expect(current.next.next.next.val).toEqual(4);
     });
   });
+
+  describe('kthFromEnd', () => {
+    it('Should take a number and return the index of said number from the end of the list', () => {
+      let node4 = {val: 4, next: null};
+      let node3 = {val: 3, next: node4};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      
+      list.head = node1;
+      list.length = 4;
+
+      expect(list.kthFromEnd(2)).toEqual(2);
+    });
+
+    it('Should correctly handle recieving a value greater than the length of the list', () => {
+      let node4 = {val: 4, next: null};
+      let node3 = {val: 3, next: node4};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      
+      list.head = node1;
+      list.length = 4;
+
+      expect(list.kthFromEnd(5)).toEqual('Index does not exist');
+    });
+
+    it('Should take a number and return the index if k is equal to the length of the list', () => {
+      let node4 = {val: 4, next: null};
+      let node3 = {val: 3, next: node4};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      
+      list.head = node1;
+      list.length = 4;
+
+      expect(list.kthFromEnd(4)).toEqual(1);
+    });
+
+    it('Should correctly handle recieving a value that is negative', () => {
+      let node4 = {val: 4, next: null};
+      let node3 = {val: 3, next: node4};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      
+      list.head = node1;
+      list.length = 4;
+
+      expect(list.kthFromEnd(-4)).toEqual('Index does not exist');
+    });
+
+    it('Should return the value of the head if the list is the length of 1', () => {
+      let node1 = {val: 4, next: null};
+      
+      list.head = node1;
+      list.length = 1;
+
+      expect(list.kthFromEnd(0)).toEqual(4);
+    });
+
+    it('Should take a number and return the index of said number from the end of the list', () => {
+      let node4 = {val: 4, next: null};
+      let node3 = {val: 3, next: node4};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      
+      list.head = node1;
+      list.length = 4;
+
+      expect(list.kthFromEnd(2)).toEqual(2);
+    });
+  });
 });
