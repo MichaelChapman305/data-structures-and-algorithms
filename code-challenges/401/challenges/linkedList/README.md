@@ -30,7 +30,7 @@ Append a node after the specified node
 returns value of node given index from end of LinkedList
 
 ## Solution
-![Picture of whiteboarding](../../assets/linked_list1.JPG)
-![Picture of whiteboarding](../../assets/linked_list2.JPG)
-![Picture of whiteboarding](../../assets/linked_list3.JPG)
+![Picture of whiteboarding](../../assets/linked_list1.jpg)
+![Picture of whiteboarding](../../assets/linked_list2.jpg)
+![Picture of whiteboarding](../../assets/linked_list3.jpg)
 ![Picture of whiteboarding](../../assets/linked_list4.JPG)
