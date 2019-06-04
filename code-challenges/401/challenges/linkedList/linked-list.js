@@ -104,6 +104,25 @@ class LinkedList {
     return val;
   }
 
+  kthFromEnd(val) {
+    let index = (this.length - val) - 1;
+    let current = this.head;
+
+    if (index > this.length) {
+      return 'Index does not exist';
+    } else if (index === this.length) {
+      return this.head.val
+    }
+
+    for (let i = 0; i <= index; i++) {
+      if (i === index) {
+        return current.val;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
   print() {
     let current = this.head;
     while (current) {
