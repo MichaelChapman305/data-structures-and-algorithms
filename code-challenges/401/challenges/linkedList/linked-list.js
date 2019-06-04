@@ -104,13 +104,13 @@ class LinkedList {
     return val;
   }
 
-  kthFromEnd(val) {
-    let index = (this.length - val) - 1;
+  kthFromEnd(k) {
+    let index = (this.length - k) - 1;
     let current = this.head;
 
-    if (index > this.length) {
+    if (k > this.length || k < 0) {
       return 'Index does not exist';
-    } else if (index === this.length) {
+    } else if (k === this.length) {
       return this.head.val
     }
 
