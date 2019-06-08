@@ -127,9 +127,22 @@ describe('stacksAndQueues Module', () => {
       });
     });
 
-  //   describe('peek', () => {
-    
-  //   });
+    describe('peek', () => {
+      it('Should return the value of the front node', () => {
+        queue.enqueue(42);
+
+        expect(queue.peek()).toEqual(42);
+      });
+
+      it('Should not modify the queue', () => {
+        queue.enqueue(42);
+        queue.enqueue(52);
+
+        expect(queue.peek()).toEqual(42);
+        expect(queue.length).toEqual(2);
+        expect(queue.front.val).toEqual(42);
+      });
+    });
   });
 });
   

@@ -80,6 +80,10 @@ class Queue {
     this.front = this.front.next;
     this.length--;
   }
+
+  peek() {
+    return this.front.val;
+  }
 }
 
 exports.stack = Stack;
