@@ -92,9 +92,21 @@ describe('stacksAndQueues Module', () => {
       });
     });
 
-  //   describe('push', () => {
-    
-  //   });
+    describe('enqueue', () => {
+      it('Adds a node to the back of the Queue', () => {
+        queue.enqueue(42);
+
+        expect(queue.front.val).toEqual(42);
+        expect(queue.length).toEqual(1);
+      });
+
+      it('Does not add a node if a value is not provided', () => {
+        queue.enqueue();
+
+        expect(queue.front).toBeNull();
+        expect(queue.length).toEqual(0);
+      });
+    });
 
   //   describe('enqueue', () => {
     

@@ -26,13 +26,13 @@ class Stack {
       this.top = node;
       this.length++;
       return node.val;
-    } else {
-      node.next = this.top;
-      this.top = node;
-      this.length++;
+    } 
 
-      return this.top.val;
-    }
+    node.next = this.top;
+    this.top = node;
+    this.length++;
+
+    return this.top.val;
   }
 
   pop() {
@@ -49,6 +49,31 @@ class Queue {
   constructor() {
     this.front = null;
     this.length = 0;
+  }
+
+  enqueue(val) {
+    if (!val) return false;
+
+    let node = new Node();
+    node.val = val;
+
+    if (!this.front) {
+      this.front = node;
+      this.length++;
+      return node.val;
+    }
+
+    let current = this.front;
+
+    while(current) {
+      if (!current.next) {
+        current.next = node;
+        this.length++;
+        return node.val;
+      }
+
+      current = current.next;
+    }
   }
 }
 
