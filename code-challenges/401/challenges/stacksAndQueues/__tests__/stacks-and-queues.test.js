@@ -74,5 +74,39 @@ describe('stacksAndQueues Module', () => {
       });
     });
   });
+
+  describe('Queue', () => {
+    let queue;
+    beforeEach(() => {
+      queue = new Queue();
+    });
+
+    describe('constructor', () => {
+      it('Creates an instance of a queue', () => {
+        expect(queue).toBeDefined();
+        expect(queue).toBeInstanceOf(Queue);
+      });
+
+      it('creates a top property with a value of null', () => {
+        expect(queue.front).toBeNull();
+      });
+    });
+
+  //   describe('push', () => {
+    
+  //   });
+
+  //   describe('enqueue', () => {
+    
+  //   });
+
+  //   describe('dequeue', () => {
+    
+  //   });
+
+  //   describe('peek', () => {
+    
+  //   });
+  });
 });
   

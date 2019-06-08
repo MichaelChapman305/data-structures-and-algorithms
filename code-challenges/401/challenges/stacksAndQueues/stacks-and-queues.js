@@ -45,4 +45,12 @@ class Stack {
   }
 }
 
+class Queue {
+  constructor() {
+    this.front = null;
+    this.length = 0;
+  }
+}
+
 exports.stack = Stack;
+exports.queue = Queue;
