@@ -108,13 +108,24 @@ describe('stacksAndQueues Module', () => {
       });
     });
 
-  //   describe('enqueue', () => {
-    
-  //   });
+    describe('dequeue', () => {
+      it('Removes the node at the front of the Queue', () => {
+        queue.enqueue(42);
+        queue.dequeue();
 
-  //   describe('dequeue', () => {
-    
-  //   });
+        expect(queue.front).toBeNull();
+        expect(queue.length).toEqual(0);
+      });
+
+      it('Should only remove one item from the Queue', () => {
+        queue.enqueue(42);
+        queue.enqueue(52);
+        queue.dequeue();
+
+        expect(queue.front.val).toEqual(52);
+        expect(queue.length).toEqual(1);
+      });
+    });
 
   //   describe('peek', () => {
     

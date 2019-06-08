@@ -75,6 +75,11 @@ class Queue {
       current = current.next;
     }
   }
+
+  dequeue() {
+    this.front = this.front.next;
+    this.length--;
+  }
 }
 
 exports.stack = Stack;
