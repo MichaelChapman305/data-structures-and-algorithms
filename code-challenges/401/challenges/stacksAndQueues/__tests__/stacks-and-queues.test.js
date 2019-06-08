@@ -36,6 +36,25 @@ describe('stacksAndQueues Module', () => {
         expect(stack.length).toEqual(0);
       });
     });
+
+    describe('pop', () => {
+      it('Should remove the top item from stack', () => {
+        stack.push(42);
+        stack.pop();
+
+        expect(stack.top).toBeNull();
+        expect(stack.length).toEqual(0);
+      });
+
+      it('Should only pop 1 item from the top of the stack', () => {
+        stack.push(42);
+        stack.push(52);
+        stack.pop();
+
+        expect(stack.top.val).toEqual(42);
+        expect(stack.length).toEqual(1);
+      });
+    });
   });
 });
   

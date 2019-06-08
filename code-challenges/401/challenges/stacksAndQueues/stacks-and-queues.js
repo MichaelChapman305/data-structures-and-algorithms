@@ -34,6 +34,11 @@ class Stack {
       return this.top.val;
     }
   }
+
+  pop() {
+    this.top = this.top.next;
+    this.length--;
+  }
 }
 
 exports.stack = Stack;
