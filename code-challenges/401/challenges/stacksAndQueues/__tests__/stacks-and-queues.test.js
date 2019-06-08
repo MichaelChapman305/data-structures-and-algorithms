@@ -5,7 +5,7 @@ describe('stacksAndQueues Module', () => {
   let Queue = stacksAndQueues.queue;
 
   describe('Stack', () => {
-    let stack
+    let stack;
     beforeEach(() => {
       stack = new Stack();
     });
@@ -18,6 +18,22 @@ describe('stacksAndQueues Module', () => {
 
       it('creates a top property with a value of null', () => {
         expect(stack.top).toBeNull();
+      });
+    });
+
+    describe('push', () => {
+      it('Adds an item to top of stack', () => {
+        stack.push(42);
+  
+        expect(stack.top.val).toEqual(42);
+        expect(stack.length).toEqual(1);
+      });
+  
+      it('Should not push an item when no argument is provided', () => {
+        stack.push();
+  
+        expect(stack.top).toBeNull();
+        expect(stack.length).toEqual(0);
       });
     });
   });
