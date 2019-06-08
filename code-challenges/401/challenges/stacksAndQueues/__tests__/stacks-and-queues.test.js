@@ -55,6 +55,24 @@ describe('stacksAndQueues Module', () => {
         expect(stack.length).toEqual(1);
       });
     });
+
+    describe('peek', () => {
+      it('should return the value of the top element', () => {
+        stack.push(42);
+
+        expect(stack.peek()).toEqual(42);
+        expect(stack.length).toEqual(1);
+      });
+
+      it('Should not modify the stack', () => {
+        stack.push(42);
+        stack.push(52);
+
+        expect(stack.peek()).toEqual(52);
+        expect(stack.length).toEqual(2);
+        expect(stack.top.val).toEqual(52);
+      });
+    });
   });
 });
   

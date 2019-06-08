@@ -39,6 +39,10 @@ class Stack {
     this.top = this.top.next;
     this.length--;
   }
+
+  peek() {
+    return this.top.val;
+  }
 }
 
 exports.stack = Stack;
