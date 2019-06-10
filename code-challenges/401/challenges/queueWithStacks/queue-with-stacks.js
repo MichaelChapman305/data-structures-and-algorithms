@@ -53,5 +53,14 @@ class PseudoQueue {
     this.stack1.push(node);
   }
 
-  
+  dequeue() {
+    if (!this.stack1.length) return 'Nothing to dequeue';
+
+    while (this.stack1.length) {
+      let temp = this.stack1.val;
+      this.stack2.push(temp);
+    }
+
+    return this.stack2.pop();
+  }
 }
