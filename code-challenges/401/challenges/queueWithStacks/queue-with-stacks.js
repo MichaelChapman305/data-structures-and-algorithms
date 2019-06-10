@@ -32,8 +32,10 @@ class Stack {
   }
 
   pop() {
+    let temp = this.top.val;
     this.top = this.top.next;
     this.length--;
+    return temp;
   }
 
   peek() {
@@ -47,4 +49,9 @@ class PseudoQueue {
     this.stack2 = new Stack();
   }
 
+  enqueue(val) {
+    this.stack1.push(node);
+  }
+
+  
 }
