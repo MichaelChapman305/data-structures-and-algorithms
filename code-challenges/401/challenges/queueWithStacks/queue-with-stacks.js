@@ -50,7 +50,8 @@ class PseudoQueue {
   }
 
   enqueue(val) {
-    this.stack1.push(node);
+    if (!val) return 'No value';
+    this.stack1.push(val);
   }
 
   dequeue() {
@@ -64,3 +65,5 @@ class PseudoQueue {
     return this.stack2.pop();
   }
 }
+
+module.exports = PseudoQueue;
