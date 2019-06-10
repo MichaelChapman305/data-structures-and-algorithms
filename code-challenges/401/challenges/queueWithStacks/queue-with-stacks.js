@@ -58,7 +58,7 @@ class PseudoQueue {
     if (!this.stack1.length) return 'Nothing to dequeue';
 
     while (this.stack1.length) {
-      let temp = this.stack1.val;
+      let temp = this.stack1.pop();
       this.stack2.push(temp);
     }
 
