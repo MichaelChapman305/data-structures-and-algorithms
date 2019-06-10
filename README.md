@@ -42,3 +42,5 @@ Data structures and algorithms practice
 [ll_merge](./code-challenges/401/challenges/llMerge)
 
 [stacks_and_queues](./code-challenges/401/challenges/stacksAndQueues)
+
+[queue_with_stacks](./code-challenges/401/challenges/queueWithStacks)
