@@ -46,3 +46,5 @@ Data structures and algorithms practice
 [queue_with_stacks](./code-challenges/401/challenges/queueWithStacks)
 
 [fifo_animal_shelter](./code-challenges/401/challenges/fifoAnimalShelter)
+
+[fifo_animal_shelter](./code-challenges/401/challenges/multiBracketValidation)
