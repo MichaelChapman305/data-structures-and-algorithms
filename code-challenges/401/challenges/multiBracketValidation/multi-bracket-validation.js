@@ -1,9 +1,9 @@
 'use strict';
 
-function multiBracketValidation(str) {
-  if (typeof str !== 'string') return 'Not a valid string';
+function multiBracketValidation(input) {
+  if (typeof input !== 'string') return 'Not a valid string';
 
-  let arr = str.split('');
+  let arr = input.split('');
   let compareArr = [];
   let reference = ['(', ')', '[', ']', '{', '}'];
   let length = arr.length;
@@ -24,7 +24,7 @@ function multiBracketValidation(str) {
       }
     }
   }
-  console.log(arr.length === 0);
+
   return arr.length === 0;
 }
 

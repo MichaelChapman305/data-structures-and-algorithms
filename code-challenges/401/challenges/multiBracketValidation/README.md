@@ -1,18 +1,15 @@
-# fifo Animal Shelter
-Create a queue which takes cats and dogs
+# Multi Bracket Validation
+Write a function which takes a string and determines whether or not the brackets are balanced
 
 ## Challenge
-Implement dequeue and enqueue, where enqueue adds animals to the queue and dequeue removes the oldest animal of the specified type out of the queue
+The challenge here is you can only register open and closing brackets and have to filter out any other characters. 
 
 ## Approach & Efficiency
-I utilized a temp variable and a for loop in order to remove the correct animal from the queue while keeping it in place
+I utilized a stack so I could continually shift characters from the array to be compared 
 
 ## API
-###Enqueue
-Add an Animal at the back of the queue
-
-###Dequeue
-Remove the oldest animal of the specified type from the queue
+###multiBracketValidation(input)
+Takes a string and determines of the brackets are balanced
 
 ## Solution
-![Picture of whiteboarding](../../assets/fifo_animal_shelter.jpg)
+![Picture of whiteboarding](../../assets/multi_bracket_validation.jpg)
