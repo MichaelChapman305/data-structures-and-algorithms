@@ -18,6 +18,23 @@ class AnimalShelter {
     animal.type = val;
     this.queue.push(animal);
   }
+
+  dequeue(pref) {
+    let temp = null;
+    let result = null;
+
+    for (let i = 0; i < this.queue.length; i++) {
+      temp = this.queue.shift();
+
+      if (temp.type === pref && !result) {
+        result = temp;
+      } else {
+        this.queue.push(temp);
+      }
+    }
+
+    return result;
+  }
   
 }
 
