@@ -1,19 +1,18 @@
-# Queues with Stacks
-Create a queue class utilizing 2 stacks
+# fifo Animal Shelter
+Create a queue which takes cats and dogs
 
 ## Challenge
-Implement enqueue and dequeue to work with two stacks rather than queue methods
+Implement dequeue and enqueue, where enqueue adds animals to the queue and dequeue removes the oldest animal of the specified type out of the queue
 
 ## Approach & Efficiency
-Implemented enqueue and dequeue to utilize stack methods
+I utilized a temp variable and a for loop in order to remove the correct animal from the queue while keeping it in place
 
 ## API
-###enqueue
-Calls stack1.push()
+###Enqueue
+Add an Animal at the back of the queue
 
-###pop
-Move all nodes from stack 1 into stack 2 and pop off the top element and returns it's value
-
+###Dequeue
+Remove the oldest animal of the specified type from the queue
 
 ## Solution
-![Picture of whiteboarding](../../assets/queue_with_stacks.jpg)
+![Picture of whiteboarding](../../assets/fifo_animal_shelter.jpg)
