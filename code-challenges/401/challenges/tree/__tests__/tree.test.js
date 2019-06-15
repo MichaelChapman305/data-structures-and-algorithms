@@ -61,10 +61,10 @@ describe('binaryTree', () => {
 
   describe('preOrder method', () => {
     it('Should return an array of numbers in a specific order', () => {
-      let inOrder = tree.inOrder();
-
-      expect(inOrder).toBeDefined();
-      expect(inOrder).toEqual([25, 15, 10, 20, 30, 28, 35]);
+      let preOrder = tree.preOrder();
+      console.log(preOrder);
+      expect(preOrder).toBeDefined();
+      expect(preOrder).toEqual([25, 15, 10, 20, 30, 28, 35]);
     });
 
     it('Should not modify the tree', () => {

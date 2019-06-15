@@ -16,10 +16,6 @@ class binaryTree {
   inOrder() {
     let results = [];
 
-      // recursive helper function
-      // This is working by utilizing the event loop
-      // when it hits the leaf, the step before runs where it was left off, on line 25++
-      // timestamp 4:41
       let _walk = node => {
         // L Ro R
 
@@ -29,6 +25,28 @@ class binaryTree {
         // Ro
         // Do something
         results.push(node.value)
+        
+        // Right
+        if (node.right) _walk(node.right);
+      };
+
+      _walk(this.root);
+
+      return results;
+  }
+
+  preOrder() {
+    let results = [];
+
+      let _walk = node => {
+        // Ro L R
+
+        // Ro
+        // Do something
+        results.push(node.value);
+
+        // Left
+        if (node.left) _walk(node.left);
         
         // Right
         if (node.right) _walk(node.right);
