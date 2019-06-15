@@ -154,4 +154,20 @@ describe('Binary Search Tree', () => {
       expect(tree.add(15)).toEqual('Value already exists');
     });
   });
+
+  describe('contains method', () => {
+    it('Should return true if tree contains value', () => {
+      tree.root.left = {value: 15, left: null, right: null};
+      tree.root.right = {value: 30, left: null, right: null};
+
+      expect(tree.contains(15)).toBeTruthy();
+    });
+
+    it('Should return false if tree does not contain value', () => {
+      tree.root.left = {value: 15, left: null, right: null};
+      tree.root.right = {value: 30, left: null, right: null};
+
+      expect(tree.contains(20)).toBeFalsy();
+    });
+  });
 });
