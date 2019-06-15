@@ -58,4 +58,25 @@ describe('binaryTree', () => {
       expect(tree.root.right.left.value).toEqual(28);
     });
   });
+
+  describe('preOrder method', () => {
+    it('Should return an array of numbers in a specific order', () => {
+      let inOrder = tree.inOrder();
+
+      expect(inOrder).toBeDefined();
+      expect(inOrder).toEqual([25, 15, 10, 20, 30, 28, 35]);
+    });
+
+    it('Should not modify the tree', () => {
+      tree.inOrder();
+
+      expect(tree.root.value).toEqual(25);
+      expect(tree.root.left.value).toEqual(15);
+      expect(tree.root.left.left.value).toEqual(10);
+      expect(tree.root.left.right.value).toEqual(20);
+      expect(tree.root.right.value).toEqual(30);
+      expect(tree.root.right.right.value).toEqual(35);
+      expect(tree.root.right.left.value).toEqual(28);
+    });
+  });
 });
