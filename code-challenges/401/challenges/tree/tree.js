@@ -87,7 +87,7 @@ class BinarySearchTree extends BinaryTree {
 
   add(value) {
     let node = new Node(value);
-    
+
     if (!this.root) {
       this.root = node;
       return node;
@@ -118,6 +118,42 @@ class BinarySearchTree extends BinaryTree {
         return 'Value already exists';
       }
     }
+  }
+
+  contains(val) {
+    if (!val) return 'No value';
+
+    let result = false;
+
+    let _walk = node => {
+      if (node.value === val) {
+        result = true;
+        return;
+      }
+
+      if (val < node.value) {
+        if (node.left) {
+          _walk(node.left);
+        } else {
+          result = false;
+          return;
+        }
+      }
+
+      if (val > node.value) {
+        if (node.right) {
+          _walk(node.right);
+        } else {
+          result = false;
+          return;
+        }
+      }
+      
+    }
+
+    _walk(this.root);
+
+    return result;
   }
 }
 

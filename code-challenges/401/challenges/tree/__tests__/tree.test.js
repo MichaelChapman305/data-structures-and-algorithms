@@ -169,5 +169,9 @@ describe('Binary Search Tree', () => {
 
       expect(tree.contains(20)).toBeFalsy();
     });
+
+    it('Should not run if no value is specified', () => {
+      expect(tree.contains()).toEqual('No value');
+    });
   });
 });
