@@ -1,19 +1,17 @@
 'use strict';
 
-class Node {
-  constructor(value, left, right) {
-    this.value = value;
-    this.left = left || null;
-    this.right = right || null;
-  }
-}
+let binaryTree = require('../tree.js');
 
-class binaryTree {
-  constructor(node) {
-    this.root = node;
-  }
+describe('binaryTree', () => {
+  let tree;
+  beforeEach(() => {
+    tree = new binaryTree();
+  });
+  describe('constructor', () => {
+    it('Should create a new binaryTree', () => {
+      expect(tree).toBeDefined();
+      expect(tree).toBeInstanceOf(binaryTree);
+    });
+  });
 
-  
-}
-
-module.exports = binarySearchTree;
+});
