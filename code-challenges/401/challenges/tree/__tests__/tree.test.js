@@ -102,33 +102,50 @@ describe('binaryTree', () => {
   });
 });
 
+//          25
+//        /    \ 
+//      15      30
+//     /  \    /  \
+//   10    20 28   35
+
 describe('Binary Search Tree', () => {
   let tree;
+  
   beforeEach(() => {
     tree = new trees.BinarySearchTree();
 
-    // create root
-    tree.root = {value: 25, left: null, right: null};
-
-    // root.left
-    tree.root.left = {value: 15, left: null, right: null};
-    // root.left.left
-    tree.root.left.left = {value: 10, left: null, right: null};
-    // root.left.right
-    tree.root.left.right = {value: 20, left: null, right: null};
-
-    // root.right
-    tree.root.right = {value: 30, left: null, right: null};
-    // root.right.right
-    tree.root.right.right = {value: 35, left: null, right: null};
-    // root.right.left
-    tree.root.right.left = {value: 28, left: null, right: null};
+    tree.add(25);
   });
 
   describe('constructor', () => {
     it('Should create a new binarySearchTree', () => {
       expect(tree).toBeDefined();
       expect(tree).toBeInstanceOf(trees.BinarySearchTree);
+    });
+  });
+
+  describe('add method', () => {
+    it('Should add an item to the root of the tree', () => {
+      expect(tree.root).toBeDefined();
+      expect(tree.root).toEqual({value: 25, left: null, right: null});
+    });
+
+    it('Should add multiple items to the tree', () => {
+      tree.add(15);
+      tree.add(10);
+      tree.add(20);
+      tree.add(30);
+      tree.add(28);
+      tree.add(35);
+
+      expect(tree.root).toBeDefined();
+      expect(tree.root.value).toEqual(25);
+      expect(tree.root.left.value).toEqual(15);
+      expect(tree.root.left.left.value).toEqual(10);
+      expect(tree.root.left.right.value).toEqual(20);
+      expect(tree.root.right.value).toEqual(30);
+      expect(tree.root.right.left.value).toEqual(28);
+      expect(tree.root.right.right.value).toEqual(35);
     });
   });
 });
