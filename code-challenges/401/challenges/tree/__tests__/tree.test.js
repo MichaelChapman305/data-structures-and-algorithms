@@ -39,7 +39,7 @@ describe('binaryTree', () => {
   });
 
   describe('inOrder method', () => {
-    it('Should return an array of numbers from least to greatest', () => {
+    it('Can successfully return a collection from an inOrder traversal', () => {
       let inOrder = tree.inOrder();
 
       expect(inOrder).toBeDefined();
@@ -60,7 +60,7 @@ describe('binaryTree', () => {
   });
 
   describe('preOrder method', () => {
-    it('Should return an array of numbers in a specific order', () => {
+    it('Can successfully return a collection from a preorder traversal', () => {
       let preOrder = tree.preOrder();
 
       expect(preOrder).toBeDefined();
@@ -81,7 +81,7 @@ describe('binaryTree', () => {
   });
 
   describe('postOrder method', () => {
-    it('Should return an array of numbers in a specific order', () => {
+    it('Can successfully return a collection from a postorder traversal', () => {
       let postOrder = tree.postOrder();
 
       expect(postOrder).toBeDefined();
@@ -125,12 +125,12 @@ describe('Binary Search Tree', () => {
   });
 
   describe('add method', () => {
-    it('Should add an item to the root of the tree', () => {
+    it('Can successfully a tree with a single root node', () => {
       expect(tree.root).toBeDefined();
       expect(tree.root.value).toEqual(25);
     });
 
-    it('Should add multiple items to the tree', () => {
+    it('Can successfully add a left child and right child to a single root node', () => {
       tree.add(15);
       tree.add(10);
       tree.add(20);
