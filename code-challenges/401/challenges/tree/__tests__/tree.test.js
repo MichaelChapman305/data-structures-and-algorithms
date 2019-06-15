@@ -1,6 +1,6 @@
 'use strict';
 
-let BinaryTree = require('../tree.js');
+let trees = require('../tree.js');
 
 //          25
 //        /    \ 
@@ -11,7 +11,7 @@ let BinaryTree = require('../tree.js');
 describe('binaryTree', () => {
   let tree;
   beforeEach(() => {
-    tree = new BinaryTree();
+    tree = new trees.BinaryTree();
 
     // create root
     tree.root = {value: 25, left: null, right: null};
@@ -34,7 +34,7 @@ describe('binaryTree', () => {
   describe('constructor', () => {
     it('Should create a new binaryTree', () => {
       expect(tree).toBeDefined();
-      expect(tree).toBeInstanceOf(BinaryTree);
+      expect(tree).toBeInstanceOf(trees.BinaryTree);
     });
   });
 
@@ -98,6 +98,37 @@ describe('binaryTree', () => {
       expect(tree.root.right.value).toEqual(30);
       expect(tree.root.right.right.value).toEqual(35);
       expect(tree.root.right.left.value).toEqual(28);
+    });
+  });
+});
+
+describe('Binary Search Tree', () => {
+  let tree;
+  beforeEach(() => {
+    tree = new trees.BinarySearchTree();
+
+    // create root
+    tree.root = {value: 25, left: null, right: null};
+
+    // root.left
+    tree.root.left = {value: 15, left: null, right: null};
+    // root.left.left
+    tree.root.left.left = {value: 10, left: null, right: null};
+    // root.left.right
+    tree.root.left.right = {value: 20, left: null, right: null};
+
+    // root.right
+    tree.root.right = {value: 30, left: null, right: null};
+    // root.right.right
+    tree.root.right.right = {value: 35, left: null, right: null};
+    // root.right.left
+    tree.root.right.left = {value: 28, left: null, right: null};
+  });
+
+  describe('constructor', () => {
+    it('Should create a new binarySearchTree', () => {
+      expect(tree).toBeDefined();
+      expect(tree).toBeInstanceOf(trees.BinarySearchTree);
     });
   });
 });

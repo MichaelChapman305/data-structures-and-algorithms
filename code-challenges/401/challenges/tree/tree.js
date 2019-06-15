@@ -80,4 +80,10 @@ class BinaryTree {
   }
 }
 
-module.exports = BinaryTree;
+class BinarySearchTree extends BinaryTree {
+  constructor(node) {
+    super(node);
+  }
+}
+
+module.exports = {BinaryTree, BinarySearchTree};
