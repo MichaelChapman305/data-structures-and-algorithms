@@ -127,7 +127,7 @@ describe('Binary Search Tree', () => {
   describe('add method', () => {
     it('Should add an item to the root of the tree', () => {
       expect(tree.root).toBeDefined();
-      expect(tree.root).toEqual({value: 25, left: null, right: null});
+      expect(tree.root.value).toEqual(25);
     });
 
     it('Should add multiple items to the tree', () => {
@@ -146,6 +146,12 @@ describe('Binary Search Tree', () => {
       expect(tree.root.right.value).toEqual(30);
       expect(tree.root.right.left.value).toEqual(28);
       expect(tree.root.right.right.value).toEqual(35);
+    });
+
+    it('Should not add value if value exists', () => {
+      tree.add(15);
+
+      expect(tree.add(15)).toEqual('Value already exists');
     });
   });
 });
