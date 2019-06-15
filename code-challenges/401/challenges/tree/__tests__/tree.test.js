@@ -1,6 +1,6 @@
 'use strict';
 
-let binaryTree = require('../tree.js');
+let BinaryTree = require('../tree.js');
 
 //          25
 //        /    \ 
@@ -11,7 +11,7 @@ let binaryTree = require('../tree.js');
 describe('binaryTree', () => {
   let tree;
   beforeEach(() => {
-    tree = new binaryTree();
+    tree = new BinaryTree();
 
     // create root
     tree.root = {value: 25, left: null, right: null};
@@ -34,7 +34,7 @@ describe('binaryTree', () => {
   describe('constructor', () => {
     it('Should create a new binaryTree', () => {
       expect(tree).toBeDefined();
-      expect(tree).toBeInstanceOf(binaryTree);
+      expect(tree).toBeInstanceOf(BinaryTree);
     });
   });
 
@@ -83,9 +83,9 @@ describe('binaryTree', () => {
   describe('postOrder method', () => {
     it('Should return an array of numbers in a specific order', () => {
       let postOrder = tree.postOrder();
-      
+
       expect(postOrder).toBeDefined();
-      expect(postOrder).toEqual([25, 15, 10, 20, 30, 28, 35]);
+      expect(postOrder).toEqual([10, 20, 15, 28, 35, 30, 25]);
     });
 
     it('Should not modify the tree', () => {

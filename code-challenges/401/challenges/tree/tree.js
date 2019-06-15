@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-class binaryTree {
+class BinaryTree {
   constructor(node) {
     this.root = node;
   }
@@ -56,6 +56,28 @@ class binaryTree {
 
       return results;
   }
+
+  postOrder() {
+    let results = [];
+
+      let _walk = node => {
+        // Ro L R
+
+        // Left
+        if (node.left) _walk(node.left);
+        
+        // Right
+        if (node.right) _walk(node.right);
+
+        // Ro
+        // Do something
+        results.push(node.value);
+      };
+
+      _walk(this.root);
+
+      return results;
+  }
 }
 
-module.exports = binaryTree;
+module.exports = BinaryTree;
