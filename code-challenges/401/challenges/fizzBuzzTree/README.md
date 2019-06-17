@@ -1,29 +1,17 @@
-# Stacks and Queues
-Create a stack class and queue class
+# Fizz Buzz Tree
+Write a function called FizzBuzzTree which takes a tree as ana rgument
 
 ## Challenge
-Implement push, pop, and peak for stack
-Implement enqueue, dequeue, and peek for queue
+This function traverses the tree changing node values to 'Fizz' if value is divisuble by 3, 'Buzz' if
+value is divisible by 5, or 'FizzBuzz' if value is divisible by 15 and returns the modified tree.
 
 ## Approach & Efficiency
-I utilized class syntax to create a node and Stack, and Queue classes and implemented methods inside of the classes.
+I utilized recursion as well as a fizzCheck function. The fizzBuzzTree runs inside of it a recursive _walk() 
+helper function which traverses the tree using inOrder traversal, and then calls fizzCheck() which handles the 
+modulus comparisons.
 
-## API
-###push
-Takes a value and nserts it into the back of the stack and resets the top to that new node
-
-###pop
-Removes the top item from the stack
-
-
-###Peek
-Returns the value of the top node
-
-###Enqueue
-Add a node at the back of the queue
-
-###Dequeue
-Remove the node from the front of the queue and reset the front to the next node
+###API
+#### FizzBuzzTree(tree)
 
 ## Solution
-![Picture of whiteboarding](../../assets/stacks_and_queues.jpg)
+![Picture of whiteboarding](../../assets/fizz_buzz_tree.jpg)

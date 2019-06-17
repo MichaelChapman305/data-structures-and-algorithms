@@ -50,3 +50,5 @@ Data structures and algorithms practice
 [fifo_animal_shelter](./code-challenges/401/challenges/multiBracketValidation)
 
 [tree](./code-challenges/401/challenges/tree)
+
+[fizz_buzz_tree](./code-challenges/401/challenges/fizzBuzzTree)
