@@ -100,6 +100,29 @@ describe('binaryTree', () => {
       expect(tree.root.right.left.value).toEqual(28);
     });
   });
+
+  describe('breadthFirst', () => {
+    it('Console logs all of the items in a tree', () => {
+      let spy = jest.spyOn(console, 'log');
+
+      tree.breadthFirst(tree);
+
+      expect(spy).toHaveBeenCalledTimes(7);
+      spy.mockRestore();
+    });
+
+    it('Should not modify the tree', () => {
+      tree.breadthFirst(tree);
+
+      expect(tree.root.value).toEqual(25);
+      expect(tree.root.left.value).toEqual(15);
+      expect(tree.root.left.left.value).toEqual(10);
+      expect(tree.root.left.right.value).toEqual(20);
+      expect(tree.root.right.value).toEqual(30);
+      expect(tree.root.right.right.value).toEqual(35);
+      expect(tree.root.right.left.value).toEqual(28);
+    });
+  });
 });
 
 //          25
