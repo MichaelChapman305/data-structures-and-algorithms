@@ -10,20 +10,20 @@ I utilized recursion in the traversal methods as well as the contains method in 
 I also had BinarySearchTree extend BinaryTree so BinarySearchTree could benefit from the traversal methods
 
 ## API
-###inOrder()
+### inOrder()
 Left Root Right
 Traverses smallest to largest
 
-###preOrder()
+### preOrder()
 Root Left Right
 
-###postOrder()
+### postOrder()
 Left Right Root
 
-###add()
+### add()
 Adds a node in the correct place in the BinarySearchTree
 
-###contains()
+### contains()
 Returns true if the tree contains the value, or false if not
 
 
