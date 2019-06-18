@@ -20,6 +20,9 @@ Root Left Right
 ### postOrder()
 Left Right Root
 
+### breadthFirst()
+Traverses the tree breadth first, consoling logging all values
+
 ### add()
 Adds a node in the correct place in the BinarySearchTree
 
@@ -29,3 +32,4 @@ Returns true if the tree contains the value, or false if not
 
 ## Solution
 ![Picture of whiteboarding](../../assets/tree.jpg)
+![Picture of breadthFirst whiteboarding](../../assets/breadth_first.jpg)
