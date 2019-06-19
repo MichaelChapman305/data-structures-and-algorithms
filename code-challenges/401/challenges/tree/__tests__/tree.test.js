@@ -127,7 +127,7 @@ describe('binaryTree', () => {
   describe('find-maximum-value()', () => {
     it('Should only take a tree', () => {
       //act
-      let result = tree.find-maximum-value('this is not a tree');
+      let result = tree.findMaximumValue('this is not a tree');
 
       //assert
       expect(result).toBe('Not a valid tree');
@@ -137,7 +137,7 @@ describe('binaryTree', () => {
 
     it('Should return the maximum value in the tree', () => {
       //act
-      let result = tree.find-maximum-value(tree);
+      let result = tree.findMaximumValue(tree);
 
       //assert
       expect(result).toEqual(35);
@@ -145,7 +145,7 @@ describe('binaryTree', () => {
 
     it('Should not modify the tree', () => {
       //act
-      tree.find-maximum-value(tree);
+      tree.findMaximumValue(tree);
 
       //assert
       expect(tree.root.value).toEqual(25);
