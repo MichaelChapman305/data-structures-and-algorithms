@@ -23,13 +23,16 @@ Left Right Root
 ### breadthFirst()
 Traverses the tree breadth first, consoling logging all values
 
+### findMaximumValue()
+Traverses the tree, keeping track of the greatest value, and returns that value
+
 ### add()
 Adds a node in the correct place in the BinarySearchTree
 
 ### contains()
 Returns true if the tree contains the value, or false if not
 
-
 ## Solution
 ![Picture of whiteboarding](../../assets/tree.jpg)
 ![Picture of breadthFirst whiteboarding](../../assets/breadth_first.jpg)
+![Picture of findMaximumValue whiteboarding](../../assets/find_maximum_value.jpg)

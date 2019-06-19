@@ -90,6 +90,24 @@ class BinaryTree {
       currentNode = queue.shift();
     }
   }
+
+  findMaximumValue(tree) {
+    if (!tree.root || !tree.root.value) return 'Not a valid tree';
+
+    let max = tree.root.value;
+
+    let _walk = node => {
+      if (node.left) _walk(node.left);
+
+      if (node.value > max) max = node.value;
+
+      if (node.right) _walk(node.right);
+    }
+
+    _walk(tree.root);
+
+    return max;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
