@@ -123,6 +123,40 @@ describe('binaryTree', () => {
       expect(tree.root.right.left.value).toEqual(28);
     });
   });
+
+  describe('find-maximum-value()', () => {
+    it('Should only take a tree', () => {
+      //act
+      let result = tree.find-maximum-value('this is not a tree');
+
+      //assert
+      expect(result).toBe('Not a valid tree');
+    });
+
+
+
+    it('Should return the maximum value in the tree', () => {
+      //act
+      let result = tree.find-maximum-value(tree);
+
+      //assert
+      expect(result).toEqual(35);
+    });
+
+    it('Should not modify the tree', () => {
+      //act
+      tree.find-maximum-value(tree);
+
+      //assert
+      expect(tree.root.value).toEqual(25);
+      expect(tree.root.left.value).toEqual(15);
+      expect(tree.root.left.left.value).toEqual(10);
+      expect(tree.root.left.right.value).toEqual(20);
+      expect(tree.root.right.value).toEqual(30);
+      expect(tree.root.right.right.value).toEqual(35);
+      expect(tree.root.right.left.value).toEqual(28);
+    });
+  });
 });
 
 //          25
