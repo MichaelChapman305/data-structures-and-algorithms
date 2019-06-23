@@ -28,6 +28,17 @@ describe('stacksAndQueues Module', () => {
         expect(stack.top.val).toEqual(42);
         expect(stack.length).toEqual(1);
       });
+
+      it('Adds multiple items to the stack', () => {
+        stack.push(42);
+        stack.push(52);
+        stack.push(62);
+  
+        expect(stack.top.val).toEqual(62);
+        expect(stack.top.next.val).toEqual(52);
+        expect(stack.top.next.next.val).toEqual(42);
+        expect(stack.length).toEqual(3);
+      });
   
       it('Should not push an item when no argument is provided', () => {
         stack.push();

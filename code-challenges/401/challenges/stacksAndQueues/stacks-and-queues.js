@@ -74,6 +74,10 @@ class Queue {
   }
 
   dequeue() {
+    if (!this.front) {
+      return;
+    }
+    
     let result = this.front.val;
     this.front = this.front.next;
     this.length--;
