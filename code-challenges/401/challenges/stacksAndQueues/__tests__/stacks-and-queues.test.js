@@ -40,10 +40,11 @@ describe('stacksAndQueues Module', () => {
     describe('pop', () => {
       it('Should remove the top item from stack', () => {
         stack.push(42);
-        stack.pop();
+        let pop = stack.pop();
 
         expect(stack.top).toBeNull();
         expect(stack.length).toEqual(0);
+        expect(pop).toEqual(42);
       });
 
       it('Should only pop 1 item from the top of the stack', () => {
