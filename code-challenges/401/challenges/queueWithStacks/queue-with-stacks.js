@@ -55,11 +55,11 @@ class PseudoQueue {
   }
 
   dequeue() {
-    if (!this.stack1.length) return 'Nothing to dequeue';
-
-    while (this.stack1.length) {
-      let temp = this.stack1.pop();
-      this.stack2.push(temp);
+    if (this.stack1.length) {
+      while (this.stack1.length) {
+        let temp = this.stack1.pop();
+        this.stack2.push(temp);
+      }
     }
 
     return this.stack2.pop();
