@@ -11,7 +11,7 @@ describe('stacksAndQueues Module', () => {
     });
 
     describe('constructor', () => {
-      it('Creates an instance of a stack', () => {
+      it('Can successfully instantiate an empty stack', () => {
         expect(stack).toBeDefined();
         expect(stack).toBeInstanceOf(Stack);
       });
@@ -58,6 +58,16 @@ describe('stacksAndQueues Module', () => {
         expect(pop).toEqual(42);
       });
 
+      it('Can successfully empty a stack after multiple pops', () => {
+        stack.push(42);
+        stack.push(52);
+        stack.pop();
+        stack.pop();
+
+        expect(stack.top).toBeNull();
+        expect(stack.length).toEqual(0);
+      });
+
       it('Should only pop 1 item from the top of the stack', () => {
         stack.push(42);
         stack.push(52);
@@ -69,7 +79,7 @@ describe('stacksAndQueues Module', () => {
     });
 
     describe('peek', () => {
-      it('should return the value of the top element', () => {
+      it('Can successfully peek the next item on the stack', () => {
         stack.push(42);
 
         expect(stack.peek()).toEqual(42);
@@ -105,7 +115,7 @@ describe('stacksAndQueues Module', () => {
     });
 
     describe('enqueue', () => {
-      it('Adds a node to the back of the Queue', () => {
+      it('Can successfully enqueue into a queue', () => {
         queue.enqueue(42);
 
         expect(queue.front.val).toEqual(42);
@@ -113,7 +123,7 @@ describe('stacksAndQueues Module', () => {
         expect(queue.length).toEqual(1);
       });
 
-      it('Adds more than one node the back of the Queue', () => {
+      it('Can successfully enqueue multiple values into a queue', () => {
         queue.enqueue(42);
         queue.enqueue(52);
         queue.enqueue(35);
@@ -133,7 +143,7 @@ describe('stacksAndQueues Module', () => {
     });
 
     describe('dequeue', () => {
-      it('Removes the node at the front of the Queue', () => {
+      it('Can successfully dequeue out of a queue the expected value', () => {
         queue.enqueue(42);
         let dequeued = queue.dequeue();
 
@@ -142,18 +152,20 @@ describe('stacksAndQueues Module', () => {
         expect(dequeued).toEqual(42);
       });
 
-      it('Should only remove one item from the Queue', () => {
+      it('Can successfully empty a queue after multiple dequeues', () => {
         queue.enqueue(42);
         queue.enqueue(52);
         queue.dequeue();
+        queue.dequeue();
 
-        expect(queue.front.val).toEqual(52);
-        expect(queue.length).toEqual(1);
+        expect(queue.front).toBeNull();
+        expect(queue.back).toBeNull();
+        expect(queue.length).toEqual(0);
       });
     });
 
     describe('peek', () => {
-      it('Should return the value of the front node', () => {
+      it('Can successfully peek into a queue, seeing the expected value', () => {
         queue.enqueue(42);
 
         expect(queue.peek()).toEqual(42);
