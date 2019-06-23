@@ -124,10 +124,11 @@ describe('stacksAndQueues Module', () => {
     describe('dequeue', () => {
       it('Removes the node at the front of the Queue', () => {
         queue.enqueue(42);
-        queue.dequeue();
+        let dequeued = queue.dequeue();
 
         expect(queue.front).toBeNull();
         expect(queue.length).toEqual(0);
+        expect(dequeued).toEqual(42);
       });
 
       it('Should only remove one item from the Queue', () => {
