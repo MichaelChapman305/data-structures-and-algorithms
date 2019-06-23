@@ -33,7 +33,7 @@ describe('Queue with stacks module1', () => {
   });
 
   describe('dequeue', () => {
-    it('Should move all nodes from stack 1 to stack 2', () => {
+    it('Should move the node from stack 1 to stack 2', () => {
       pseudoQueue.enqueue(42);
       pseudoQueue.enqueue(52);
       pseudoQueue.dequeue();
@@ -53,6 +53,23 @@ describe('Queue with stacks module1', () => {
       expect(pseudoQueue.stack2.length).toEqual(1);
       expect(pseudoQueue.stack2.top.val).toEqual(52);
       expect(pseudoQueue.stack1.top).toBeNull();
+    });
+
+    it('Should totally work and dequeue the nodes in the appropriate order', () => {
+      pseudoQueue.enqueue(42);
+      pseudoQueue.enqueue(52);
+      pseudoQueue.enqueue(62);
+      pseudoQueue.enqueue(72);
+
+      let n1 = pseudoQueue.dequeue()
+      let n2 = pseudoQueue.dequeue()
+      let n3 = pseudoQueue.dequeue()
+      let n4 = pseudoQueue.dequeue()
+
+      expect(n1).toEqual(42);
+      expect(n2).toEqual(52);
+      expect(n3).toEqual(62);
+      expect(n4).toEqual(72);
     });
   });
 });
