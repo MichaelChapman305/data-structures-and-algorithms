@@ -39,7 +39,7 @@ class Stack {
     let result = this.top.val;
     this.top = this.top.next;
     this.length--;
-    
+
     return result;
   }
 
@@ -51,6 +51,7 @@ class Stack {
 class Queue {
   constructor() {
     this.front = null;
+    this.back = null;
     this.length = 0;
   }
 
@@ -62,21 +63,14 @@ class Queue {
 
     if (!this.front) {
       this.front = node;
+      this.back = node;
       this.length++;
       return node.val;
     }
 
-    let current = this.front;
-
-    while(current) {
-      if (!current.next) {
-        current.next = node;
-        this.length++;
-        return node.val;
-      }
-
-      current = current.next;
-    }
+    this.back.next = node;
+    this.back = this.back.next;
+    this.length++;
   }
 
   dequeue() {

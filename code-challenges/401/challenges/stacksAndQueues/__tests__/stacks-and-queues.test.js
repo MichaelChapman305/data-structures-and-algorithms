@@ -98,8 +98,20 @@ describe('stacksAndQueues Module', () => {
         queue.enqueue(42);
 
         expect(queue.front.val).toEqual(42);
+        expect(queue.back.val).toEqual(42);
         expect(queue.length).toEqual(1);
       });
+
+      it('Adds more than one node the back of the Queue', () => {
+        queue.enqueue(42);
+        queue.enqueue(52);
+        queue.enqueue(35);
+
+        expect(queue.front.val).toEqual(42);
+        expect(queue.back.val).toEqual(35);
+        expect(queue.length).toEqual(3);
+      });
+
 
       it('Does not add a node if a value is not provided', () => {
         queue.enqueue();
