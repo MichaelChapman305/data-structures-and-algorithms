@@ -56,3 +56,5 @@ Data structures and algorithms practice
 [breadth_first](./code-challenges/401/challenges/tree)
 
 [findMaximumValue](./code-challenges/401/challenges/tree)
+
+[insertionSort](./code-challenges/401/challenges/insertionSort)
