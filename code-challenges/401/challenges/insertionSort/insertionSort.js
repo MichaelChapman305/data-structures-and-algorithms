@@ -9,7 +9,7 @@ let insertionSort = (arr) => {
     if (typeof arr[i] !== 'number') {
       return 'Not valid data'
     }
-    
+
     let j = i - 1;
     let temp = arr[i];
 
@@ -25,17 +25,3 @@ let insertionSort = (arr) => {
 }
 
 module.exports = insertionSort;
-
-
-// InsertionSort(int[] arr)
-
-//   FOR i = 1 to arr.length
-  
-//     int j <-- i - 1
-//     int temp <-- arr[i]
-    
-//     WHILE j >= 0 AND temp < arr[j]
-//       arr[j + 1] <-- arr[j]
-//       j <-- j - 1
-      
-//     arr[j + 1] <-- temp

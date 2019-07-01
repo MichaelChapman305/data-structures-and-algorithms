@@ -8,4 +8,4 @@ Implement insertion sort, a sorting algorithm which compares each element in the
 I will be utilizing a for loop inside of a while loop, keeping track of the elements using a temp variable and comparing arr[i] with arr[i+1] swapping elements where necessary
 
 ## Solution
-![Picture of whiteboarding]()
+![code](./insertionSort.js)
