@@ -60,3 +60,5 @@ Data structures and algorithms practice
 [insertionSort](./code-challenges/401/challenges/insertionSort)
 
 [insertionSort](./code-challenges/401/challenges/mergeSort)
+
+[insertionSort](./code-challenges/401/challenges/quickSort)
