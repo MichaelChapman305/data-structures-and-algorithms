@@ -87,6 +87,16 @@ class HashTable {
       throw err;
     }
   }
+
+  get(key) {
+    if (!key) throw new Error('Invalid key provided');
+
+    let index = this.hash(key);
+
+    if (!this.buckets[index])  { return null; }
+
+    return this.buckets[index].getWithKey(key);
+  }
 }
 
 module.exports = { HashTable, LinkedList };
