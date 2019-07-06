@@ -65,4 +65,4 @@ class HashTable {
 
 }
 
-module.exports = {HashTable, LinkedList};
+module.exports = { HashTable, LinkedList };

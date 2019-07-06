@@ -1,6 +1,6 @@
 'use strict';
 
-const { Hashtable, LinkedList } = require('../hashTable.js');
+const { HashTable } = require('../hashtable.js');
 
 describe('Hash Table', () => {
   test('Should construct a Hash Table', () => {
@@ -8,10 +8,10 @@ describe('Hash Table', () => {
     let expectedSize = 5;
 
     // act
-    let hashtable = new hashtable(expectedSize);
+    let hashtable = new HashTable(expectedSize);
 
     // assert
-    expect(hashtable).toBeInstanceOf(hashtable);
+    expect(hashtable).toBeInstanceOf(HashTable);
     expect(hashtable.size).toBeDefined();
     expect(hashtable.size).toBe(expectedSize)
     expect(hashtable.buckets.length).toBe(expectedSize);
@@ -22,7 +22,7 @@ describe('Hash Table', () => {
       // arrange
       let expectedHash = 3;
       let key = 'cat';
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       // act
       let result = hashtable.hash(key);
@@ -35,7 +35,7 @@ describe('Hash Table', () => {
       // arrange
       let expectedHash = 1;
       let key = 'foo';
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       // act
       let result = hashtable.hash(key);
@@ -50,7 +50,7 @@ describe('Hash Table', () => {
       // arrange
       let key = 'foo';
       let value = 'bar';
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       //act
       hashtable.add(key, value);
@@ -62,7 +62,7 @@ describe('Hash Table', () => {
 
     test('Should be able to handle a collision', () => {
       // arrange
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       // act
       hashtable.add('key', 'value');
@@ -79,7 +79,7 @@ describe('Hash Table', () => {
   describe('get(key)', () => {
     test('Given a key, should return the value', () => {
       // arrange
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       // act
       hashtable.add('foo', 'bar');
@@ -91,29 +91,13 @@ describe('Hash Table', () => {
 
     test('Should return null if key does not exist', () => {
       // arrange
-      let hashtable = new hashtable(5);
+      let hashtable = new HashTable(5);
 
       // act
       hashtable.add('key', 'value');
 
       // assert
       expect(hashtable.get('foo')).toBe('bar');
-    });
-
-    test('Should return the value from a bucket within a hashtable that has a collision', () => {
-      // arrange
-      let hashtable = new hashtable(5);
-
-      // act
-      hashtable.add('key', 'value');
-      hashtable.add('key', 'anotherValue');
-
-      let result = hashtable.hash('key');
-
-      // assert
-      console.log(hashtable.get('key'));
-      // expect(hashtable.get('key')).toBe('value');
-      // expect(hashtable.buckets[result].head.next.value[1]).toBe('anotherValue');
     });
 
     test('Should return the value from a bucket within a hashtable that has a collision', () => {
