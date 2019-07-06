@@ -63,6 +63,12 @@ class HashTable {
     this.buckets = new Array(this.size);
   }
 
+  hash(key) {
+    // This is the actual hash function controling where the values get placed
+    let hash = key.split('').reduce((prev, curr) => prev + curr.charCodeAt(0), 0) * 599 % this.size;
+
+    return hash;
+  }
 }
 
 module.exports = { HashTable, LinkedList };
