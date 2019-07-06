@@ -48,7 +48,7 @@ describe('Hash Table', () => {
   describe('add(key, value)', () => {
     test('Should add the key value pair to the hashtable', () => {
       // arrange
-      let key = 'foo';
+      let key = 'baz';
       let value = 'bar';
       let hashtable = new HashTable(5);
 

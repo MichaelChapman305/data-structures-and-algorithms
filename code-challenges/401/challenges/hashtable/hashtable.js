@@ -69,6 +69,24 @@ class HashTable {
 
     return hash;
   }
+
+  add(key, value) {
+    if (!key) throw new Error('Invalid key provided');
+    // if (this.contains(key)) throw new Error('Key already being used');
+
+    let index = this.hash(key);
+
+    if (!this.buckets[index])  { this.buckets[index] = new LinkedList(); }
+
+    try{
+      // this.buckets is an array
+      // this.buckets[index] is a Linked List
+      // Must put key and value for lookup
+      this.buckets[index].add([key, value]);
+    } catch(err) {
+      throw err;
+    }
+  }
 }
 
 module.exports = { HashTable, LinkedList };
