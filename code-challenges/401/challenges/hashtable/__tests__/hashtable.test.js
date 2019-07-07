@@ -138,7 +138,7 @@ describe('Hash Table', () => {
       hashtable.add('yek', 'value');
 
       // assert
-      expect(hashtable.contains('key')).toBeFalsey();
+      expect(hashtable.contains('kei')).not.toBeTruthy();
     });
   });
 });
