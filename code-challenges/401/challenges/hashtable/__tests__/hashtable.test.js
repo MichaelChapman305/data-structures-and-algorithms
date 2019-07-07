@@ -1,6 +1,6 @@
 'use strict';
 
-const { HashTable } = require('../hashtable.js');
+const { HashTable, LinkedList } = require('../hashtable.js');
 
 describe('Hash Table', () => {
   test('Should construct a Hash Table', () => {
@@ -97,7 +97,7 @@ describe('Hash Table', () => {
       hashtable.add('key', 'value');
 
       // assert
-      expect(hashtable.get('foo')).toBe('bar');
+      expect(hashtable.get('zjskd')).toBe(null);
     });
 
     test('Should return the value from a bucket within a hashtable that has a collision', () => {
@@ -116,5 +116,44 @@ describe('Hash Table', () => {
       expect(hashtable.get('key')).toBe('value');
       expect(hashtable.get('yek')).toBe('anotherValue');
     });
+  });
+
+  describe('contains(key)', () => {
+    test('Should return true if the key exists', () => {
+      // arrange
+      let hashtable = new HashTable(5);
+
+      // act
+      hashtable.add('key', 'value');
+
+      // assert
+      expect(hashtable.contains('key')).toBeTruthy();
+    });
+
+    test('Should return false if the key does not exists', () => {
+      // arrange
+      let hashtable = new HashTable(5);
+
+      // act
+      hashtable.add('yek', 'value');
+
+      // assert
+      expect(hashtable.contains('key')).toBeFalsey();
+    });
+  });
+});
+
+describe('LinkedList', () => {
+  test('values in linked list works', () => {
+    let list = new LinkedList();
+
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+
+    let val = list.values();
+
+    expect(val).toEqual([1, 2, 3, 4]);
   });
 });

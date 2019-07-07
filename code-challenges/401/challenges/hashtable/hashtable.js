@@ -95,6 +95,8 @@ class HashTable {
 
     if (!this.buckets[index])  { return null; }
 
+    console.log(this.buckets);
+
     return this.buckets[index].getWithKey(key);
   }
 }
