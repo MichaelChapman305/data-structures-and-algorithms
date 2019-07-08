@@ -72,7 +72,7 @@ class HashTable {
 
   add(key, value) {
     if (!key) throw new Error('Invalid key provided');
-    // if (this.contains(key)) throw new Error('Key already being used');
+    if (this.contains(key)) return 'Key already being used';
 
     let index = this.hash(key);
 

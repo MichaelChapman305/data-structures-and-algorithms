@@ -1,6 +1,6 @@
 'use strict';
 
-let repeatedWord = require('../repeated-word');
+let repeatedWord = require('../repeated-word.js');
 
 describe('repeatedWord', () => {
   test('Should only take a string', () => {
@@ -8,7 +8,7 @@ describe('repeatedWord', () => {
   });
 
   test('Should return the first repeated word of a string', () => {
-    let str = "Once upon a time, there was a brave princess who was brave"
+    let str = "Once upon a time, there was a brave princess who was brave";
     expect(repeatedWord(str)).toBe('a');
   });
 
