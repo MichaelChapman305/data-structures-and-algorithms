@@ -4,7 +4,7 @@ let HashTable = require('../hashtable/hashtable');
 
 let repeatedWord = (str) => {
   if (typeof str !== 'string') return 'Not a valid string';
-  let words = str.split(' ');
+  let words = str.toLowerCase().split(' ');
 
   let hashTable = new HashTable.HashTable(5);
 
