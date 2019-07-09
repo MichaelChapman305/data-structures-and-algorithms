@@ -4,10 +4,11 @@ let treeIntersection = require('../tree-intersection');
 let trees = require('../../tree/tree');
 
 describe('treeIntersection(tree1, tree2)', () => {
-  let tree;
+  let tree1;
+  let tree2;
   beforeEach(() => {
-    tree1 = new trees.BinaryTree();
-    tree2 = new trees.BinaryTree();
+    tree1 = new trees.BinarySearchTree();
+    tree2 = new trees.BinarySearchTree();
 
     // create root
     tree1.root = {value: 25, left: null, right: null};
@@ -43,6 +44,7 @@ describe('treeIntersection(tree1, tree2)', () => {
 
     expect(result).toBeDefined();
     expect(result.length).toEqual(4);
+    expect(result).toBeInstanceOf(Array);
     expect(result).toContain(25);
     expect(result).toContain(28);
     expect(result).toContain(10);
