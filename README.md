@@ -68,3 +68,5 @@ Data structures and algorithms practice
 [repeatedWord](./code-challenges/401/challenges/repeatedWord)
 
 [treeIntersection](./code-challenges/401/challenges/treeIntersection)
+
+[treeIntersection](./code-challenges/401/challenges/leftJoin)
