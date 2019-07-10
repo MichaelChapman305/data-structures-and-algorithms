@@ -1,7 +1,7 @@
 'use strict';
 
-let HashTable = require('../../hashtable/hashtable');
-let leftJoin = require('../left-join');
+let { HashTable } = require('../../hashtable/hashtable.js');
+let leftJoin = require('../left-join.js');
 
 describe('left-join', () => {
   let table1;
@@ -39,7 +39,7 @@ describe('left-join', () => {
     let table3 = 'hello';
     let table4 = 'world';
 
-    expect(leftJoin(table3, table4)).toBe('Not valid table')
+    expect(leftJoin(table3, table4)).toBe('Not valid tables')
   });
 
   test('Should send an empty array if no matches found', () => {
