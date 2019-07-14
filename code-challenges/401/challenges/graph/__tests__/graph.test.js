@@ -35,9 +35,7 @@ describe('Graph module', () => {
     test('Node can be successfully added to the graph', () => {
       let graph = new Graph();
 
-      const nine = new Vertex(9);
-
-      let res = graph.addNode(nine);
+      let res = graph.addNode(9);
   
       expect(res).toEqual(9);
     });
@@ -47,11 +45,8 @@ describe('Graph module', () => {
     test('Edge can be successfully added to the graph', () => {
       let graph = new Graph();
 
-      const eight = new Vertex(8);
-      const six = new Vertex(6);
-
-      graph.addNode(eight);
-      graph.addNode(six);
+      graph.addNode(8);
+      graph.addNode(6);
 
       let res = graph.addEdge(eight, six);
 
@@ -138,7 +133,7 @@ describe('Graph module', () => {
 
     test('An empty graph properly returns null', () => {
       let graph = new Graph();
-      
+
       expect(graph.getGraph()).toBe(null);
     });
   });
