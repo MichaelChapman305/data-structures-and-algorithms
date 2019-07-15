@@ -13,7 +13,6 @@ class Edge {
   }
 }
 
-
 class Graph {
   constructor() {
     this._adjacencyList = new Map();
@@ -79,6 +78,35 @@ class Graph {
         parentPath.push(neighborVertex, currentVertex);
       }
     }
+  }
+
+  getNodes(startVertex){
+    const stack = [];
+    const visitedVertices = new Set();
+    const path = new Array();
+
+    stack.push(startVertex);
+    visitedVertices.add(startVertex);
+
+    while(stack.length){
+      let currentVertex = stack.pop();
+
+      let neighbors = this.getNeighbors(currentVertex);
+
+      for(let edge of neighbors){
+        let neighborVertex = edge.vertex;
+
+        if(visitedVertices.has(neighborVertex)){
+          continue;
+        }else{
+          visitedVertices.add(neighborVertex);
+        }
+
+        stack.push(neighborVertex);
+        path.push(neighborVertex, currentVertex);
+      }
+    }
+    return path;
   }
 
   size(){
