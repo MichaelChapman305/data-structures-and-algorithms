@@ -36,6 +36,8 @@ describe('Graph module', () => {
       let graph = new Graph();
 
       let res = graph.addNode(9);
+
+      console.log(graph._adjacencyList);
   
       expect(res).toEqual(9);
     });
@@ -112,7 +114,7 @@ describe('Graph module', () => {
 
       graph.addEdge(eight, six);
 
-      expect(graph.size(8)).toEqual(2)
+      expect(graph.size()).toEqual(2)
     });
   });
 
