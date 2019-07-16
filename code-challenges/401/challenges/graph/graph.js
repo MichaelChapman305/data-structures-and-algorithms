@@ -15,7 +15,7 @@ class Edge {
 
 class Graph {
   constructor() {
-    this._adjacencyList = new Map();
+    this._adjacencyLists = new Map();
     this.listSize = 0;
   }
 
@@ -80,55 +80,32 @@ class Graph {
     }
   }
 
-  getNodes(startVertex){
-    const stack = [];
-    const visitedVertices = new Set();
-    const path = new Array();
-
-    stack.push(startVertex);
-    visitedVertices.add(startVertex);
-
-    while(stack.length){
-      let currentVertex = stack.pop();
-
-      let neighbors = this.getNeighbors(currentVertex);
-
-      for(let edge of neighbors){
-        let neighborVertex = edge.vertex;
-
-        if(visitedVertices.has(neighborVertex)){
-          continue;
-        }else{
-          visitedVertices.add(neighborVertex);
-        }
-
-        stack.push(neighborVertex);
-        path.push(neighborVertex, currentVertex);
-      }
-    }
-    return path;
+  getNodes(){
+    let nodes = [...this._adjacencyLists.keys()];
+    console.log(nodes);
+    return nodes;
   }
 
-  breadthFirst(node) {
-    let visited = [];
-    for (let i = 0; i < this.size; i++) {
-      visited[i] = false;
-    }
+  // breadthFirst(node) {
+  //   let visited = new Set();
+  //   for (let i = 0; i < this.size; i++) {
+  //     visited[i] = false;
+  //   }
   
-    let queue = new Queue();
+  //   let queue = new Queue();
   
-    visited[node] = true;
-    queue.enqueue(node);
+  //   visited[node] = true;
+  //   queue.enqueue(node);
   
-    while(!queue.isEmpty()) {
-      let getQueueEl = queue.dequeue();
+  //   while(!queue.isEmpty()) {
+  //     let item = queue.dequeue();
   
-      if (!visited[item]) {
-        visited[item] = true;
-        queue.enqueue(item);
-      }
-    }
-  }
+  //     if (!visited[item]) {
+  //       visited[item] = true;
+  //       queue.enqueue(item);
+  //     }
+  //   }
+  // }
 
   size(){
     if(this.listSize === 0){
