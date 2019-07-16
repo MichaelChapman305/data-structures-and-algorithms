@@ -22,3 +22,6 @@ I implemented a depth first traversal to support methods such as getNeighbors, t
 
 ### pathTo()
 #### Depth first traversal method
+
+### breadthFirst()
+#### Breadth first traversal method

@@ -109,6 +109,27 @@ class Graph {
     return path;
   }
 
+  breadthFirst(node) {
+    let visited = [];
+    for (let i = 0; i < this.size; i++) {
+      visited[i] = false;
+    }
+  
+    let queue = new Queue();
+  
+    visited[node] = true;
+    queue.enqueue(node);
+  
+    while(!queue.isEmpty()) {
+      let getQueueEl = queue.dequeue();
+  
+      if (!visited[item]) {
+        visited[item] = true;
+        queue.enqueue(item);
+      }
+    }
+  }
+
   size(){
     if(this.listSize === 0){
       return null;
@@ -117,4 +138,4 @@ class Graph {
   }
 }
 
-module.exports = Graph;
+module.exports = {Graph, Vertex, Edge};
