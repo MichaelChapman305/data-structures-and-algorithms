@@ -115,4 +115,6 @@ class Graph {
   }
 }
 
+// getVertexEdges or getVertexAdjacencyList
+
 module.exports = {Graph, Vertex, Edge};
