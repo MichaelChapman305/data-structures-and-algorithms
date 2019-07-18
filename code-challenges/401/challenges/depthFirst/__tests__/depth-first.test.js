@@ -8,23 +8,14 @@ describe('depthFirst(graph)', () => {
   beforeEach(() => {
     graph = new Graph.Graph();
 
-    const A = new Graph.Vertex('A');
-    const B = new Graph.Vertex('B');
-    const C = new Graph.Vertex('C');
-    const D = new Graph.Vertex('D');
-    const E = new Graph.Vertex('E');
-    const F = new Graph.Vertex('F');
-    const G = new Graph.Vertex("G");
-    const H = new Graph.Vertex("H");
-
-    graph.addVertex(A);
-    graph.addVertex(B);
-    graph.addVertex(C);
-    graph.addVertex(D);
-    graph.addVertex(E);
-    graph.addVertex(F);
-    graph.addVertex(G);
-    graph.addVertex(H);
+    const A = graph.addNode('A');
+    const B = graph.addNode('B');
+    const C = graph.addNode('C');
+    const D = graph.addNode('D');
+    const E = graph.addNode('E');
+    const F = graph.addNode('F');
+    const G = graph.addNode('G');
+    const H = graph.addNode('H');
 
     graph.addEdge(A, B);
     graph.addEdge(A, D);
