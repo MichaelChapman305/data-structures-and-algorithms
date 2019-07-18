@@ -1,23 +1,23 @@
 'use strict';
 
 function depthFirst(graph) {
-  console.log(graph);
-  // if (typeof graph !== 'array' || graph.size === 0) return 'not a valid graph'; 
+  if (typeof graph !== 'object' || graph.listSize === 0) return 'not a valid graph'; 
+
   const stack = [];
   const visitedVertices = new Set();
   let result = [];
 
-  let coolArray = graph.getNodes();
-  let startVertex = coolArray[0];
+  let vertices = graph.getNodes();
+  let startVertex = vertices[0];
 
   stack.push(startVertex);
   visitedVertices.add(startVertex);
 
   while(stack.length){
     let currentVertex = stack.pop();
-    result.push(currentVertex);
-
     let neighbors = graph.getNeighbors(currentVertex);
+
+    result.push(currentVertex);
 
     for(let edge of neighbors){
       let neighborVertex = edge.vertex;
@@ -31,6 +31,7 @@ function depthFirst(graph) {
       stack.push(neighborVertex);
     }
   }
+
   return result;
 }
 

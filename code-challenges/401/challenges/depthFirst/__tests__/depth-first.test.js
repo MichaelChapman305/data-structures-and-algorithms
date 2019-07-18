@@ -42,11 +42,11 @@ describe('depthFirst(graph)', () => {
     { value: 'C' },
     { value: 'G' }];
 
-    expect(depthFirst(graph)).toEqual(['A']);
+    expect(depthFirst(graph)).toEqual(result);
   });
 
   test('Returns empty array if no verticies in graph', () => {
-    let graph = new Graph();
+    let graph = new Graph.Graph();
     expect(depthFirst(graph)).toEqual('not a valid graph');
   });
 });
