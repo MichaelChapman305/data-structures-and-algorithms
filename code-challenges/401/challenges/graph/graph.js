@@ -20,7 +20,8 @@ class Graph {
   }
 
   addNode(value){
-    let newNode = this.addVertex(new Vertex(value));
+    let newNode = new Vertex(value);
+    this.addVertex(newNode);
     return newNode;
   }
 
@@ -80,10 +81,12 @@ class Graph {
     }
   }
 
-  getNodes(){
-    let nodes = [...this._adjacencyLists.keys()];
-    console.log(nodes);
-    return nodes;
+  getNodes() {
+    if(this.numberOfNodes !== 0){
+      return [...this._adjacencyList.keys()];
+    }else{
+      return null;
+    }
   }
 
   // breadthFirst(node) {
