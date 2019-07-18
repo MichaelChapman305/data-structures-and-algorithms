@@ -70,3 +70,6 @@ Data structures and algorithms practice
 [treeIntersection](./code-challenges/401/challenges/treeIntersection)
 
 [treeIntersection](./code-challenges/401/challenges/leftJoin)
+
+
+[treeIntersection](./code-challenges/401/challenges/depthFirst)
