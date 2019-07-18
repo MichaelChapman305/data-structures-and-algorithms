@@ -15,14 +15,13 @@ class Edge {
 
 class Graph {
   constructor() {
-    this._adjacencyList = new Map();
+    this._adjacencyLists = new Map();
     this.listSize = 0;
   }
 
   addNode(value){
     let newNode = new Vertex(value);
     this.addVertex(newNode);
-
     return newNode;
   }
 
@@ -31,31 +30,22 @@ class Graph {
     this.listSize++;
   }
 
-  addEdge(startVertex, endVertex, weight = 0) {
+  addEdge(startVertex, endVertex, weight = 0){
     if(!this._adjacencyList.has(startVertex) || !this._adjacencyList.has(endVertex)){
-      throw new Error('ERROR: invalid vertices');
+      return 'ERROR: invalid vertices';
     }
-
     const adjacencies = this._adjacencyList.get(startVertex);
     adjacencies.push(new Edge(endVertex, weight));
   }
 
   addBiDirectionalEdge(vertex_a, vertex_b, weight = 0){
-    this.addEdge(vertex_a, vertex_b, weight);
-    this.addEdge(vertex_b, vertex_a, weight);
-  }
-
-  getNodes() {
-    if (this.listSize !== 0) {
-      return [...this._adjacencyList.keys()];
-    } else {
-      return null;
-    }
+    this.addDirectedEdge(vertex_a, vertex_b, weight);
+    this.addDirectedEdge(vertex_b, vertex_a, weight);
   }
 
   getNeighbors(vertex){
     if(!this._adjacencyList.has(vertex)){
-      return `invalid vertex ${vertex}`;
+      return 'ERROR: invalid vertex', vertex;
     }
     return [...this._adjacencyList.get(vertex)];
   }
@@ -70,7 +60,6 @@ class Graph {
 
     while(stack.length){
       const currentVertex = stack.pop();
-
       if(currentVertex === goalVertex){
         return parentPath;
       }
@@ -92,39 +81,34 @@ class Graph {
     }
   }
 
-  breadthFirst(startNode){
-    if (this.listSize === 0) return null;
-
-    let visitedVertices = new Set();
-    let queue = [];
-    let results = [];
-
-    queue.push(startNode);
-    visitedVertices.add(startNode);
-
-    while(queue.length){
-      let deQueue = queue.shift();
-
-      results.push(deQueue);
-      visitedVertices.add(deQueue);
-
-      const neighbors = this.getNeighbors(deQueue);
-
-      for(let k of neighbors){
-        let neighbor = k.vertex;
-
-        if(visitedVertices.has(neighbor)){
-          continue;
-        }else{
-          visitedVertices.add(neighbor);
-        }
-
-        queue.push(neighbor);
-      }
+  getNodes() {
+    if(this.numberOfNodes !== 0){
+      return [...this._adjacencyList.keys()];
+    }else{
+      return null;
     }
-    
-    return results;
   }
+
+  // breadthFirst(node) {
+  //   let visited = new Set();
+  //   for (let i = 0; i < this.size; i++) {
+  //     visited[i] = false;
+  //   }
+  
+  //   let queue = new Queue();
+  
+  //   visited[node] = true;
+  //   queue.enqueue(node);
+  
+  //   while(!queue.isEmpty()) {
+  //     let item = queue.dequeue();
+  
+  //     if (!visited[item]) {
+  //       visited[item] = true;
+  //       queue.enqueue(item);
+  //     }
+  //   }
+  // }
 
   size(){
     if(this.listSize === 0){
@@ -133,5 +117,7 @@ class Graph {
     return this.listSize;
   }
 }
+
+// getVertexEdges or getVertexAdjacencyList
 
 module.exports = {Graph, Vertex, Edge};
