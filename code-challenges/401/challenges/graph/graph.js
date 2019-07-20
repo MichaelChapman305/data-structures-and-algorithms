@@ -22,7 +22,6 @@ class Graph {
   addNode(value){
     let newNode = new Vertex(value);
     this.addVertex(newNode);
-
     return newNode;
   }
 
@@ -89,6 +88,14 @@ class Graph {
         stack.push(neighborVertex);
         parentPath.push(neighborVertex, currentVertex);
       }
+    }
+  }
+
+  getNodes() {
+    if(this.numberOfNodes !== 0){
+      return [...this._adjacencyList.keys()];
+    }else{
+      return null;
     }
   }
 
