@@ -134,35 +134,39 @@ describe('Graph module', () => {
     });
   });
 
-  // describe('breadFirst', () => {
-  //   test('Returns values from graph breadth first', () => {
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
+  describe('breadFirst', () => {
+    test('Returns values from graph breadth first', () => {
+      let res = [
+        { value: 8 },
+        { value: 6 },
+        { value: 5 },
+        { value: 7 },
+        { value: 3 },
+        { value: 0 },
+        { value: 9 }
+      ];
+
+      expect(graph.breadthFirst(eight)).toEqual(res);
+    });
   
-  //     Graph.addVertex(eight);
-  //     Graph.addVertex(six);
+    test('Only takes a starting node', () => {
+      expect(graph.breadthFirst('ndoe')).toEqual(null);
+    });
   
-  //     Graph.addEdge(eight, six);
-  
-  //     expect(breadthFirst(eight)).toEqual([8, 6]);
-  //   });
-  
-  //   test('Only takes a starting node', () => {
-  //     expect(breadthFirst('ndoe')).toBe('Not a valid node');
-  //   });
-  
-  //   test('Does not modify the Graph', () => {
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-  
-  //     Graph.addVertex(eight);
-  //     Graph.addVertex(six);
-  
-  //     Graph.addEdge(eight, six);
-  
-  //     expect(breadthFirst(eight)).toEqual([8, 6]);
-  //     expect(eight.value).toEqual(8);
-  //     expect(six.value).toEqual(6);
-  //   });
-  // });
+    test('Does not modify the Graph', () => {
+      let res = [
+        { value: 8 },
+        { value: 6 },
+        { value: 5 },
+        { value: 7 },
+        { value: 3 },
+        { value: 0 },
+        { value: 9 }
+      ];
+
+      expect(graph.breadthFirst(eight)).toEqual(res);
+      expect(eight.value).toEqual(8);
+      expect(six.value).toEqual(6);
+    });
+  });
 });
