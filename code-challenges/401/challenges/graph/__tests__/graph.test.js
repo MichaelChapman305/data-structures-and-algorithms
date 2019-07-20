@@ -3,172 +3,166 @@
 let { Graph, Vertex, Edge } = require('../graph');
 
 describe('Graph module', () => {
-  // let graph = new Graph();
+  let graph;
+  let nine;
+  let oh;
+  let three;
+  let five;
+  let seven;
+  let six;
+  let eight;
   beforeEach(() => {
-    // const eight = new Vertex(8);
-    // const six = new Vertex(6);
-    // const seven = new Vertex(7);
-    // const five = new Vertex(5);
-    // const three = new Vertex(3);
-    // const oh = new Vertex(0);
-    // const nine = new Vertex(9);
+    graph = new Graph;
 
-    // graph.addNode(eight);
-    // graph.addNode(six);
-    // graph.addNode(seven);
-    // graph.addNode(five);
-    // graph.addNode(three);
-    // graph.addNode(oh);
-    // graph.addNode(nine);
+    eight = new Vertex(8);
+    six = new Vertex(6);
+    seven = new Vertex(7);
+    five = new Vertex(5);
+    three = new Vertex(3);
+    oh = new Vertex(0);
+    nine = new Vertex(9);
 
-    // graph.addEdge(eight, six);
-    // graph.addEdge(eight, five);
-    // graph.addEdge(six, seven);
-    // graph.addEdge(seven, five);
-    // graph.addEdge(five, three);
-    // graph.addEdge(three, oh);
-    // graph.addEdge(oh, nine);
-    // graph.addEdge(nine, eight);
+    graph.addVertex(eight);
+    graph.addVertex(six);
+    graph.addVertex(seven);
+    graph.addVertex(five);
+    graph.addVertex(three);
+    graph.addVertex(oh);
+    graph.addVertex(nine);
+
+    graph.addEdge(eight, six);
+    graph.addEdge(eight, five);
+    graph.addEdge(six, seven);
+    graph.addEdge(seven, five);
+    graph.addEdge(five, three);
+    graph.addEdge(three, oh);
+    graph.addEdge(oh, nine);
+    graph.addEdge(nine, eight);
   });
 
-  // describe('addNode(value)', () => {
-  //   test('Node can be successfully added to the graph', () => {
-  //     let graph = new Graph();
-
-  //     let res = graph.addNode(9);
-
-  //     console.log(graph._adjacencyList);
-  
-  //     expect(res).toEqual(9);
-  //   });
-  // });
-
-  // describe('addEdge(vertex)', () => {
-  //   test('Edge can be successfully added to the graph', () => {
-  //     let graph = new Graph();
-
-  //     graph.addNode(8);
-  //     graph.addNode(6);
-
-  //     let res = graph.addEdge(eight, six);
-
-  //     expect(start).toEqual(0);
-  //   });
-  // });
-
-  // describe('getNodes()', () => {
-  //   test('A collection of nodes can be successfully retrieved from the graph', () => {
-  //     let graph = new Graph();
-
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-
-  //     graph.addNode(eight);
-  //     graph.addNode(six);
-
-  //     graph.addEdge(eight, six);
-
-  //     expect(graph.getNodes()).toEqual([8, 6])
-  //   });
-  // });
-
-  // describe('getNeighbors(vertex)', () => {
-  //   test('All appropriate neighbors can be retrieved from graph', () => {
-  //     let graph = new Graph();
-
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-
-  //     graph.addNode(eight);
-  //     graph.addNode(six);
-
-  //     graph.addEdge(eight, six);
-
-  //     expect(graph.getNeighbors(8)).toEqual([[6, 0]])
-  //   });
-
-  //   test('Neighbors are returned with the weight between nodes included', () => {
-  //     let graph = new Graph();
-
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-
-  //     graph.addNode(eight);
-  //     graph.addNode(six);
-
-  //     graph.addEdge(eight, six);
-
-  //     expect(graph.getNeighbors(8)).toEqual([[6, 0]])
-  //   });
-  // });
-
-  // describe('size()', () => {
-  //   test('The proper size is returned, representing the number of nodes in the graph', () => {
-  //     let graph = new Graph();
-
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-
-  //     graph.addNode(eight);
-  //     graph.addNode(six);
-
-  //     graph.addEdge(eight, six);
-
-  //     expect(graph.size()).toEqual(2)
-  //   });
-  // });
-
-  // describe('getGraph()', () => {
-  //   test('A graph with only one node and edge can be properly returned', () => {
-  //     let graph = new Graph();
-
-  //     const eight = new Vertex(8);
-  //     const six = new Vertex(6);
-
-  //     graph.addNode(eight);
-  //     graph.addNode(six);
-
-  //     graph.addEdge(eight, six);
-
-  //     expect(typeof graph.getGraph()).toBe(object)
-  //   });
-
-  //   test('An empty graph properly returns null', () => {
-  //     let graph = new Graph();
-
-  //     expect(graph.getGraph()).toBe(null);
-  //   });
-  // });
-
-  describe('breadFirst', () => {
-    test('Returns values from graph breadth first', () => {
-      const eight = new Vertex(8);
-      const six = new Vertex(6);
-  
-      Graph.addVertex(eight);
-      Graph.addVertex(six);
-  
-      Graph.addEdge(eight, six);
-  
-      expect(breadthFirst(eight)).toEqual([8, 6]);
-    });
-  
-    test('Only takes a starting node', () => {
-      expect(breadthFirst('ndoe')).toBe('Not a valid node');
-    });
-  
-    test('Does not modify the Graph', () => {
-      const eight = new Vertex(8);
-      const six = new Vertex(6);
-  
-      Graph.addVertex(eight);
-      Graph.addVertex(six);
-  
-      Graph.addEdge(eight, six);
-  
-      expect(breadthFirst(eight)).toEqual([8, 6]);
-      expect(eight.value).toEqual(8);
-      expect(six.value).toEqual(6);
+  describe('addNode(value)', () => {
+    test('Node can be successfully added to the graph', () => {
+      expect(graph._adjacencyList.has(nine)).toEqual(true);
     });
   });
+
+  describe('addEdge(vertex)', () => {
+    test('Edge can be successfully added to the graph', () => {
+      expect(graph.getNeighbors(nine)).toEqual([{'vertex': {'value': 8}, 'weight': 0}]);
+    });
+  });
+
+  describe('getNodes()', () => {
+    test('A collection of nodes can be successfully retrieved from the graph', () => {
+      let res = [
+        { value: 8 },
+        { value: 6 },
+        { value: 7 },
+        { value: 5 },
+        { value: 3 },
+        { value: 0 },
+        { value: 9 }
+      ];
+
+      expect(graph.getNodes()).toEqual(res)
+    });
+
+    test('A graph with only one node and edge can be properly returned', () => {
+      let graph = new Graph();
+
+      graph.addVertex(eight);
+
+      graph.addEdge(eight, eight);
+
+      expect(graph.getNodes()).toEqual([ { value: 8 } ])
+    });
+
+    test('An empty graph properly returns null', () => {
+      let graph = new Graph();
+      expect(graph.getNodes()).toEqual(null);
+    });
+  });
+
+  describe('getNeighbors(vertex)', () => {
+    test('All appropriate neighbors can be retrieved from graph', () => {
+      expect(graph.getNeighbors(nine)).toEqual([{'vertex': {'value': 8}, 'weight': 0}]);
+    });
+
+    test('Neighbors are returned with the weight between nodes included', () => {
+      expect(graph.getNeighbors(six)).toEqual([{'vertex': {'value': 7}, 'weight': 0}]);
+    });
+  });
+
+  describe('size()', () => {
+    test('The proper size is returned, representing the number of nodes in the graph', () => {
+      expect(graph.size()).toEqual(7)
+    });
+  });
+
+  describe('pathT0()', () => {
+    test('Returns the path between two nodes', () => {
+      let result = [
+        { value: 6 },
+        { value: 8 },
+        { value: 5 },
+        { value: 8 },
+        { value: 3 },
+        { value: 5 }
+      ];
+
+      expect(graph.pathTo(eight, three)).toEqual(result);
+    });
+  });
+
+  describe('Add by directional edge', () => {
+    test('Adds by directional edge', () => {
+      let graph = new Graph();
+
+      let eight = new Vertex(8);
+      let six = new Vertex(6);
+
+      graph.addVertex(eight);
+      graph.addVertex(six);
+
+      graph.addBiDirectionalEdge(eight, six);
+
+      let res1 = [ { weight: 0, vertex: { value: 6 } } ];
+      let res2 = [ { weight: 0, vertex: { value: 8 } } ];
+
+      expect(graph.getNeighbors(eight)).toEqual(res1);
+      expect(graph.getNeighbors(six)).toEqual(res2);
+    });
+  });
+
+  // describe('breadFirst', () => {
+  //   test('Returns values from graph breadth first', () => {
+  //     const eight = new Vertex(8);
+  //     const six = new Vertex(6);
+  
+  //     Graph.addVertex(eight);
+  //     Graph.addVertex(six);
+  
+  //     Graph.addEdge(eight, six);
+  
+  //     expect(breadthFirst(eight)).toEqual([8, 6]);
+  //   });
+  
+  //   test('Only takes a starting node', () => {
+  //     expect(breadthFirst('ndoe')).toBe('Not a valid node');
+  //   });
+  
+  //   test('Does not modify the Graph', () => {
+  //     const eight = new Vertex(8);
+  //     const six = new Vertex(6);
+  
+  //     Graph.addVertex(eight);
+  //     Graph.addVertex(six);
+  
+  //     Graph.addEdge(eight, six);
+  
+  //     expect(breadthFirst(eight)).toEqual([8, 6]);
+  //     expect(eight.value).toEqual(8);
+  //     expect(six.value).toEqual(6);
+  //   });
+  // });
 });

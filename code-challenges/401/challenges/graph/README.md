@@ -25,3 +25,4 @@ I implemented a depth first traversal to support methods such as getNeighbors, t
 
 ### breadthFirst()
 #### Breadth first traversal method
+![Picture of whiteboarding for breadthFirst](../../assets/breadth_first.jpg)
