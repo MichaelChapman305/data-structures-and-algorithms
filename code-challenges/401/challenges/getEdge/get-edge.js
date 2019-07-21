@@ -1,7 +1,5 @@
 'use strict';
 
-import { ModuleMap } from "jest-haste-map";
-
 function getEdge(graph, path){
   let total = 0;
   let nodes = graph.getNodes();
@@ -14,13 +12,14 @@ function getEdge(graph, path){
   }
 
   for(let i = 1; i < path.length; i++){
+    console.log(current);
     let neighbor = graph.getNeighbors(current);
     let isFound = false;
 
     for(let k = 0; k < neighbor.length; k++){
-      if(neighbor[j].vertex.value === path[i]){
-        total += neighbor[j].weight;
-        current = neighbor[j].vertex;
+      if(neighbor[k].vertex.value === path[i]){
+        total += neighbor[k].weight;
+        current = neighbor[k].vertex;
         isFound = true;
 
         break;
@@ -30,7 +29,7 @@ function getEdge(graph, path){
       return false + ' $0';
     }
   }
-  return 'true $' + total;
+  return `true $${total}`;
 }
 
-module.exports = getEdge();
+module.exports = getEdge;
